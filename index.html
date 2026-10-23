@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss Dashboard</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="sidebar glass-sidebar" id="sidebar-wrapper">
+            <div
+                class="sidebar-heading d-flex align-items-center justify-content-between px-3 py-3 border-bottom border-secondary border-opacity-10">
+                <div class="flex-grow-1 text-center">
+                    <img src="logo.png" alt="BOSS Logo" class="img-fluid"
+                        style="max-width: 170px; height: auto; object-fit: contain; padding: 2px;">
+                </div>
+                <button type="button" class="sidebar-close-btn d-lg-none ms-2" id="sidebar-close-btn"
+                    aria-label="Close sidebar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="list-group list-group-flush mt-2">
+                <a href="index.html"
+                    class="list-group-item list-group-item-action py-3 ripple active rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-gauge-high fa-fw me-3"></i><span>Dashboard</span>
+                </a>
+                <a href="members.html"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-users fa-fw me-3"></i><span>Members</span>
+                </a>
+                <a href="form.html"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-file-pen fa-fw me-3"></i><span>Form</span>
+                </a>
+                <a href="meeting_schedules.html"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-calendar-check fa-fw me-3"></i><span>Meeting Schedules</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-calendar-days fa-fw me-3"></i><span>Monthly Meeting Fees</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-comments fa-fw me-3"></i><span>121s</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-hand-holding-dollar fa-fw me-3"></i><span>RFLs</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-link fa-fw me-3"></i><span>TYNs</span>
+                </a>
+                <!-- Visitors Dropdown Menu -->
+                <div class="sidebar-dropdown-menu mb-1" id="visitorsDropdown">
+                    <a href="#" class="sidebar-dropdown-toggle list-group-item list-group-item-action py-3 ripple rounded d-flex justify-content-between align-items-center" id="visitorsToggle" role="button" aria-expanded="false">
+                        <div class="d-flex align-items-center">
+                            <span class="sidebar-icon-wrap me-3">
+                                <svg class="visitor-funnel-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <!-- 3 People silhouettes on top -->
+                                    <circle cx="5" cy="4.5" r="1.7" />
+                                    <path d="M2.2 9.2c0-1.5 1.2-2.5 2.8-2.5s2.8 1 2.8 2.5v.5H2.2v-.5z" />
+                                    <circle cx="12" cy="3.5" r="1.9" />
+                                    <path d="M8.8 8.8c0-1.7 1.4-2.8 3.2-2.8s3.2 1.1 3.2 2.8v.5H8.8v-.5z" />
+                                    <circle cx="19" cy="4.5" r="1.7" />
+                                    <path d="M16.2 9.2c0-1.5 1.2-2.5 2.8-2.5s2.8 1 2.8 2.5v.5h-5.6v-.5z" />
+                                    <!-- Funnel with tiered stages -->
+                                    <path d="M2.5 11.5h19l-2 3.2H4.5l-2-3.2z" />
+                                    <path d="M5.5 15.7h13l-2.2 3.3H7.7l-2.2-3.3z" />
+                                    <path d="M8.5 20h7l-1 2.5h-5l-1-2.5z" />
+                                </svg>
+                            </span>
+                            <span class="dropdown-item-text">Visitors</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down dropdown-arrow ms-2 flex-shrink-0"></i>
+                    </a>
+                    <div class="sidebar-submenu-collapse" id="visitorsSubmenu">
+                        <div class="sidebar-submenu-card">
+                            <a href="#" class="sidebar-submenu-link">General</a>
+                            <a href="#" class="sidebar-submenu-link">Chief Guest</a>
+                            <a href="#" class="sidebar-submenu-link">Inductions</a>
+                            <a href="#" class="sidebar-submenu-link">Power Date</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-regular fa-calendar fa-fw me-3"></i><span>Events</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-newspaper fa-fw me-3"></i><span>News Feed</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-bullseye fa-fw me-3"></i><span>Leads</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center"><i
+                            class="fa-solid fa-coins fa-fw me-3"></i><span>Finance</span></div>
+                    <i class="fa-solid fa-chevron-down ms-2 flex-shrink-0"
+                        style="font-size: 0.65rem; opacity: 0.6;"></i>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-comment-dots fa-fw me-3"></i><span>Testimonials</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center"><i
+                            class="fa-solid fa-file-invoice fa-fw me-3"></i><span>Reports</span></div>
+                    <i class="fa-solid fa-chevron-down ms-2 flex-shrink-0"
+                        style="font-size: 0.65rem; opacity: 0.6;"></i>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center"><i
+                            class="fa-solid fa-sliders fa-fw me-3"></i><span>Masters</span></div>
+                    <i class="fa-solid fa-chevron-down ms-2 flex-shrink-0"
+                        style="font-size: 0.65rem; opacity: 0.6;"></i>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-star fa-fw me-3"></i><span>Points System</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-user-shield fa-fw me-3"></i><span>Roles & Permissions</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-arrow-right-from-bracket fa-fw me-3"></i><span>Logout</span>
+                </a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Sidebar Mobile & Tablet Backdrop -->
+        <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" class="flex-grow-1">
+            <!-- Top Nav -->
+            <nav class="navbar navbar-expand-lg py-3 px-4 shadow-none glass-header rounded-4 mb-2 header-nav-bar"
+                style="margin: 12px 12px 0 12px;">
+                <div class="d-flex align-items-center justify-content-between w-100 header-container">
+                    <!-- Left: Menu toggle & Search Bar -->
+                    <div class="header-left d-flex align-items-center">
+                        <button class="btn btn-light me-3 d-lg-none rounded-circle flex-shrink-0" id="menu-toggle"><i
+                                class="fa-solid fa-bars"></i></button>
+
+                        <!-- Search Bar Trigger -->
+                        <div class="search-bar glass-panel d-flex align-items-center" id="header-search-bar"
+                            role="button" tabindex="0" title="Click to search (Ctrl+K)">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #374151; font-size: 1.1rem;"></i>
+                            <input type="text" class="form-control border-0 shadow-none bg-transparent p-0 ms-3"
+                                id="header-search-input" placeholder="Search for tasks, projects..."
+                                style="font-size: 0.95rem; color: #4b5563; background-color: transparent !important; cursor: pointer;"
+                                readonly>
+                        </div>
+                    </div>
+
+                    <!-- Center: Live Date & Time Widget -->
+                    <div class="header-center d-none d-lg-flex justify-content-center align-items-center mx-2">
+                        <div class="header-datetime-pill">
+                            <!-- Date Item -->
+                            <div class="datetime-item">
+                                <div class="datetime-icon-badge">
+                                    <i class="fa-regular fa-calendar"></i>
+                                </div>
+                                <span class="datetime-text" id="header-date">Thu, 08 Sep 2026</span>
+                            </div>
+
+                            <!-- Vertical Divider -->
+                            <div class="datetime-divider"></div>
+
+                            <!-- Time Item -->
+                            <div class="datetime-item">
+                                <div class="datetime-icon-badge">
+                                    <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <span class="datetime-text" id="header-time">06:20:41 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Actions & Profile -->
+                    <div class="header-right d-flex align-items-center gap-3 position-relative">
+                        <!-- Profile Trigger -->
+                        <div class="admin-profile-trigger d-flex align-items-center" id="adminProfileTrigger"
+                            role="button" tabindex="0" aria-haspopup="true" aria-expanded="false"
+                            title="Click to view profile menu">
+                            <div class="text-end me-3 d-none d-sm-block">
+                                <div class="fw-bold text-dark lh-1 mb-1" style="font-size: 0.95rem;">Hi, Super Admin
+                                </div>
+                                <div class="text-muted lh-1" style="font-size: 0.75rem;">Super Admin</div>
+                            </div>
+                            <div
+                                class="profile-avatar-circle text-white d-flex justify-content-center align-items-center shadow-sm">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <i class="fa-solid fa-chevron-down ms-2 admin-chevron"></i>
+                        </div>
+
+                        <!-- Admin Profile Dropdown Popup -->
+                        <div class="admin-profile-dropdown" id="adminProfileDropdown">
+                            <!-- User Card Header -->
+                            <div class="admin-dropdown-user-box">
+                                <div class="admin-box-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="admin-box-info">
+                                    <div class="admin-box-name">Super Admin</div>
+                                    <div class="admin-box-email">superadmin@gmail.com</div>
+                                    <div class="admin-box-role">
+                                        <i class="fa-solid fa-crown"></i>
+                                        <span>Super Admin</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Menu Items -->
+                            <div class="admin-dropdown-menu">
+                                <a href="#" class="admin-dropdown-item">
+                                    <i class="fa-regular fa-circle-user admin-item-icon"></i>
+                                    <span>Change Password</span>
+                                </a>
+                                <a href="#" class="admin-dropdown-item">
+                                    <i class="fa-solid fa-qrcode admin-item-icon"></i>
+                                    <span>Attendance QR Code</span>
+                                </a>
+                            </div>
+
+                            <!-- Logout Item -->
+                            <a href="#" class="admin-dropdown-logout">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content Container -->
+            <div class="container-fluid px-4 py-4 main-content glass-panel"
+                style="margin: 12px; width: auto; border-radius: 20px;">
+
+                <!-- Title & Actions -->
+                <div
+                    class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3 dashboard-page-header">
+                    <h4 class="fw-bold mb-0 text-dark-blue d-flex align-items-center">
+                        Dashboard
+                    </h4>
+                    <div class="d-flex align-items-center gap-2 flex-wrap dashboard-header-actions">
+                        <!-- Date Range Action Container with Dropdown Anchor -->
+                        <div class="dashboard-dropdown-wrapper position-relative" id="datePickerContainer">
+                            <button class="btn btn-brand-solid-dropdown d-flex align-items-center"
+                                id="selectDateRangeBtn" type="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa-regular fa-calendar me-2"></i>
+                                <span class="btn-text">Select Date Range</span>
+                                <i class="fa-solid fa-chevron-down ms-2 btn-chevron"></i>
+                            </button>
+
+                            <!-- Datepicker Card positioned directly below button -->
+                            <div class="datepicker-card dropdown-anchored-popup" id="datePickerCard" role="dialog"
+                                aria-modal="true">
+                                <!-- Red Calendar Top Header -->
+                                <div class="datepicker-header">
+                                    <button type="button" class="datepicker-nav-btn" id="calPrevMonth"
+                                        aria-label="Previous Month">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    <div class="datepicker-title" id="calMonthTitle">
+                                        September 2026 <i class="fa-solid fa-chevron-down ms-1"
+                                            style="font-size: 0.75rem;"></i>
+                                    </div>
+                                    <button type="button" class="datepicker-nav-btn" id="calNextMonth"
+                                        aria-label="Next Month">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Weekdays Header Row -->
+                                <div class="datepicker-weekdays">
+                                    <span>Sun</span>
+                                    <span>Mon</span>
+                                    <span>Tue</span>
+                                    <span>Wed</span>
+                                    <span>Thu</span>
+                                    <span>Fri</span>
+                                    <span>Sat</span>
+                                </div>
+
+                                <!-- Calendar Days Grid -->
+                                <div class="datepicker-body">
+                                    <div class="datepicker-grid" id="calendarDaysGrid">
+                                        <!-- Populated dynamically via JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filters Action Container with Dropdown Anchor -->
+                        <div class="dashboard-dropdown-wrapper position-relative" id="locationFilterContainer">
+                            <button class="btn btn-outline-brand-dropdown d-flex align-items-center"
+                                id="dashboardFiltersBtn" type="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa-solid fa-filter me-2"></i>
+                                <span class="btn-text">Filters</span>
+                                <i class="fa-solid fa-chevron-down ms-2 btn-chevron"></i>
+                            </button>
+
+                            <!-- Location Filter Card positioned directly below button -->
+                            <div class="location-filter-card dropdown-anchored-popup" id="locationFilterCard"
+                                role="dialog" aria-modal="true">
+                                <!-- Header -->
+                                <div class="location-filter-header">
+                                    <h5 class="location-filter-title">Filter by Location</h5>
+                                    <button type="button" class="location-filter-close" id="closeLocationFilterBtn"
+                                        aria-label="Close">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Form Fields -->
+                                <div class="location-form-group">
+                                    <label class="location-form-label" for="dashCountrySelect">Country</label>
+                                    <div class="location-select-wrap">
+                                        <select class="location-select" id="dashCountrySelect">
+                                            <option value="" selected>All Countries</option>
+                                            <option value="India">India</option>
+                                            <option value="United States">United States</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="Singapore">Singapore</option>
+                                            <option value="United Arab Emirates">United Arab Emirates</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down location-select-chevron"></i>
+                                    </div>
+                                </div>
+
+                                <div class="location-form-group">
+                                    <label class="location-form-label" for="dashStateSelect">State</label>
+                                    <div class="location-select-wrap">
+                                        <select class="location-select" id="dashStateSelect">
+                                            <option value="" selected>All States</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Kerala">Kerala</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Telangana">Telangana</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down location-select-chevron"></i>
+                                    </div>
+                                </div>
+
+                                <div class="location-form-group">
+                                    <label class="location-form-label" for="dashRegionSelect">Region</label>
+                                    <div class="location-select-wrap">
+                                        <select class="location-select" id="dashRegionSelect">
+                                            <option value="" selected>All Regions</option>
+                                            <option value="Boss Chennai">Boss Chennai</option>
+                                            <option value="Boss Cochin">Boss Cochin</option>
+                                            <option value="Boss Madurai">Boss Madurai</option>
+                                            <option value="Boss Bangalore">Boss Bangalore</option>
+                                            <option value="Boss Mumbai">Boss Mumbai</option>
+                                            <option value="Boss Coimbatore">Boss Coimbatore</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down location-select-chevron"></i>
+                                    </div>
+                                </div>
+
+                                <div class="location-form-group">
+                                    <label class="location-form-label" for="dashChapterSelect">Chapter</label>
+                                    <div class="location-select-wrap">
+                                        <select class="location-select" id="dashChapterSelect">
+                                            <option value="" selected>All Chapters</option>
+                                            <option value="Royals Chapter">Royals Chapter</option>
+                                            <option value="Titans Chapter">Titans Chapter</option>
+                                            <option value="Warriors Chapter">Warriors Chapter</option>
+                                            <option value="Champions Chapter">Champions Chapter</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down location-select-chevron"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Footer Actions -->
+                                <div class="location-filter-actions">
+                                    <button type="button" class="btn btn-clear-filters" id="resetLocationFilterBtn">
+                                        <i class="fa-solid fa-rotate-right me-1"></i> Reset
+                                    </button>
+                                    <button type="button" class="btn btn-brand-red" id="applyLocationFilterBtn">
+                                        Apply Filters
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8 Metric Cards -->
+                <div class="row g-3 mb-4">
+                    <!-- Card 1 -->
+                    <div class="col-xl-3 col-md-6">
+                        <div class="metric-card-modern theme-red h-100">
+                            <svg class="mc-wave" viewBox="0 0 200 80" preserveAspectRatio="none">
+                                <path d="M0 80 C 40 80 75 52 120 52 C 155 52 175 38 200 42 L 200 80 Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                            <div class="mc-content d-flex justify-content-between h-100">
+                                <div class="d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h6 class="mc-title mb-1">Members</h6>
+                                        <h2 class="mc-number mb-0">9</h2>
+                                    </div>
+                                    <div class="mc-trend"><i class="fa-solid fa-arrow-up"></i> 12% vs last month</div>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-end">
+                                    <div class="mc-icon-wrapper">
+                                        <i class="fa-solid fa-users"></i>
+                                    </div>
+                                    <div class="mc-arrow-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-xl-3 col-md-6">
+                        <div class="metric-card-modern theme-red h-100">
+                            <svg class="mc-wave" viewBox="0 0 200 80" preserveAspectRatio="none">
+                                <path d="M0 80 C 40 80 75 52 120 52 C 155 52 175 38 200 42 L 200 80 Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                            <div class="mc-content d-flex justify-content-between h-100">
+                                <div class="d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h6 class="mc-title mb-1">FBMs</h6>
+                                        <h2 class="mc-number mb-0">30</h2>
+                                    </div>
+                                    <div class="mc-trend"><i class="fa-solid fa-arrow-up"></i> 18% vs last month</div>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-end">
+                                    <div class="mc-icon-wrapper">
+                                        <i class="fa-solid fa-building"></i>
+                                    </div>
+                                    <div class="mc-arrow-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-xl-3 col-md-6">
+                        <div class="metric-card-modern theme-red h-100">
+                            <svg class="mc-wave" viewBox="0 0 200 80" preserveAspectRatio="none">
+                                <path d="M0 80 C 40 80 75 52 120 52 C 155 52 175 38 200 42 L 200 80 Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                            <div class="mc-content d-flex justify-content-between h-100">
+                                <div class="d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h6 class="mc-title mb-1">RFLs</h6>
+                                        <h2 class="mc-number mb-0">14</h2>
+                                    </div>
+                                    <div class="mc-trend"><i class="fa-solid fa-arrow-up"></i> 7% vs last month</div>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-end">
+                                    <div class="mc-icon-wrapper">
+                                        <i class="fa-solid fa-file-lines"></i>
+                                    </div>
+                                    <div class="mc-arrow-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col-xl-3 col-md-6">
+                        <div class="metric-card-modern theme-red h-100">
+                            <svg class="mc-wave" viewBox="0 0 200 80" preserveAspectRatio="none">
+                                <path d="M0 80 C 40 80 75 52 120 52 C 155 52 175 38 200 42 L 200 80 Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                            <div class="mc-content d-flex justify-content-between h-100">
+                                <div class="d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h6 class="mc-title mb-1">TYNs</h6>
+                                        <h2 class="mc-number mb-0">7</h2>
+                                    </div>
+                                    <div class="mc-trend"><i class="fa-solid fa-arrow-up"></i> 5% vs last month</div>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-end">
+                                    <div class="mc-icon-wrapper">
+                                        <i class="fa-solid fa-bullseye"></i>
+                                    </div>
+                                    <div class="mc-arrow-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <!-- Card 5 -->
+                    <div class="col-xl-3 col-md-6">
+                        <div class="metric-card-modern theme-red h-100">
+                            <svg class="mc-wave" viewBox="0 0 200 80" preserveAspectRatio="none">
+                                <path d="M0 80 C 40 80 75 52 120 52 C 155 52 175 38 200 42 L 200 80 Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                            <div class="mc-content d-flex justify-content-between h-100">
+                                <div class="d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h6 class="mc-title mb-1">General Visitors</h6>
+                                        <h2 class="mc-number mb-0">6</h2>
+                                    </div>
+                                    <div class="mc-trend"><i class="fa-solid fa-arrow-up"></i> 9% vs last month</div>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-end">
+                                    <div class="mc-icon-wrapper">
+                                        <i class="fa-solid fa-user-group"></i>
+                                    </div>
+                                    <div class="mc-arrow-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="col-xl-3 col-md-6">
+                        <div class="metric-card-modern theme-red h-100">
+                            <svg class="mc-wave" viewBox="0 0 200 80" preserveAspectRatio="none">
+                                <path d="M0 80 C 40 80 75 52 120 52 C 155 52 175 38 200 42 L 200 80 Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                            <div class="mc-content d-flex justify-content-between h-100">
+                                <div class="d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h6 class="mc-title mb-1">Chief Guest</h6>
+                                        <h2 class="mc-number mb-0">6</h2>
+                                    </div>
+                                    <div class="mc-trend"><i class="fa-solid fa-arrow-up"></i> 9% vs last month</div>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-end">
+                                    <div class="mc-icon-wrapper">
+                                        <i class="fa-solid fa-user-tie"></i>
+                                    </div>
+                                    <div class="mc-arrow-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="col-xl-3 col-md-6">
+                        <div class="metric-card-modern theme-red h-100">
+                            <svg class="mc-wave" viewBox="0 0 200 80" preserveAspectRatio="none">
+                                <path d="M0 80 C 40 80 75 52 120 52 C 155 52 175 38 200 42 L 200 80 Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                            <div class="mc-content d-flex justify-content-between h-100">
+                                <div class="d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h6 class="mc-title mb-1">Power Date</h6>
+                                        <h2 class="mc-number mb-0">4</h2>
+                                    </div>
+                                    <div class="mc-trend"><i class="fa-solid fa-arrow-up"></i> 3% vs last month</div>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-end">
+                                    <div class="mc-icon-wrapper">
+                                        <i class="fa-solid fa-calendar-check"></i>
+                                    </div>
+                                    <div class="mc-arrow-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="col-xl-3 col-md-6">
+                        <div class="metric-card-modern theme-red h-100">
+                            <svg class="mc-wave" viewBox="0 0 200 80" preserveAspectRatio="none">
+                                <path d="M0 80 C 40 80 75 52 120 52 C 155 52 175 38 200 42 L 200 80 Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                            <div class="mc-content d-flex justify-content-between h-100">
+                                <div class="d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h6 class="mc-title mb-1">Inductions</h6>
+                                        <h2 class="mc-number mb-0">5</h2>
+                                    </div>
+                                    <div class="mc-trend"><i class="fa-solid fa-arrow-up"></i> 11% vs last month</div>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-end">
+                                    <div class="mc-icon-wrapper">
+                                        <i class="fa-solid fa-user-plus"></i>
+                                    </div>
+                                    <div class="mc-arrow-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.8" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Achievers Overall (Reference Design) -->
+                <div class="achievers-banner-wrapper mb-4">
+                    <!-- Red Header Banner -->
+                    <div class="achievers-banner-header">
+                        <div class="achievers-header-left">
+                            <h4 class="achievers-main-title mb-1">Top Achievers Overall</h4>
+                            <div class="achievers-sub-title" id="achievers-active-period">Overall</div>
+                        </div>
+                        <div class="achievers-header-right">
+                            <!-- Time Filter Pills -->
+                            <div class="achievers-time-pills">
+                                <button type="button" class="achievers-pill-btn" data-period="This Week">This
+                                    Week</button>
+                                <button type="button" class="achievers-pill-btn" data-period="Last Week">Last
+                                    Week</button>
+                                <button type="button" class="achievers-pill-btn active"
+                                    data-period="Overall">Overall</button>
+                            </div>
+                            <!-- Download Button -->
+                            <button type="button" class="achievers-download-btn">
+                                <span>Download</span>
+                                <i class="fa-solid fa-arrow-down-to-bracket"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- White Card Body with 3 Category Cards -->
+                    <div class="achievers-banner-body">
+                        <div class="row g-4">
+                            <!-- Card 1: Biz Given -->
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="achiever-card-item">
+                                    <div class="achiever-card-top">
+                                        <div class="achiever-ribbon">
+                                            <i class="fa-solid fa-handshake achiever-ribbon-icon"></i>
+                                            <span>Biz Given</span>
+                                        </div>
+                                        <span class="achiever-top-badge">Top 3 Achievers</span>
+                                    </div>
+
+                                    <div class="achiever-rows-list">
+                                        <!-- Row 1 -->
+                                        <div class="achiever-rank-row">
+                                            <span class="achiever-rank-num">1</span>
+                                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces"
+                                                alt="Karthi Padmanaban" class="achiever-avatar-img"
+                                                onerror="this.onerror=null; this.src='avatar-1.svg';">
+                                            <div class="achiever-info">
+                                                <div class="achiever-name" title="Karthi Padmanaban">Karthi Padmanaban
+                                                </div>
+                                                <div class="achiever-company" title="Boss the Future">Boss the Future
+                                                </div>
+                                            </div>
+                                            <span class="achiever-val">₹59,54,02,418</span>
+                                        </div>
+
+                                        <!-- Row 2 -->
+                                        <div class="achiever-rank-row">
+                                            <span class="achiever-rank-num">2</span>
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces"
+                                                alt="Saran Prasad" class="achiever-avatar-img"
+                                                onerror="this.onerror=null; this.src='avatar-2.svg';">
+                                            <div class="achiever-info">
+                                                <div class="achiever-name" title="Saran Prasad">Saran Prasad</div>
+                                                <div class="achiever-company" title="Circuit Craft">Circuit Craft</div>
+                                            </div>
+                                            <span class="achiever-val">₹33,32,20,785</span>
+                                        </div>
+
+                                        <!-- Row 3 -->
+                                        <div class="achiever-rank-row">
+                                            <span class="achiever-rank-num">3</span>
+                                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces"
+                                                alt="ER.K.P. Vijayakumar" class="achiever-avatar-img"
+                                                onerror="this.onerror=null; this.src='avatar-3.svg';">
+                                            <div class="achiever-info">
+                                                <div class="achiever-name" title="ER.K.P. Vijayakumar">ER.K.P.
+                                                    Vijayakumar</div>
+                                                <div class="achiever-company" title="VIJAY ASSOCIATES">VIJAY ASSOCIATES
+                                                </div>
+                                            </div>
+                                            <span class="achiever-val">₹13,60,03,606</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="achiever-card-bottom">
+                                        <a href="#" class="achiever-card-footer-link">
+                                            <span>All Biz Given</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2: 121s -->
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="achiever-card-item">
+                                    <div class="achiever-card-top">
+                                        <div class="achiever-ribbon">
+                                            <span class="ribbon-num-circle">121</span>
+                                            <span>121s</span>
+                                        </div>
+                                        <span class="achiever-top-badge">Top 3 Achievers</span>
+                                    </div>
+
+                                    <div class="achiever-rows-list">
+                                        <!-- Row 1 -->
+                                        <div class="achiever-rank-row">
+                                            <span class="achiever-rank-num">1</span>
+                                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=faces"
+                                                alt="P.Karthik" class="achiever-avatar-img"
+                                                onerror="this.onerror=null; this.src='avatar-4.svg';">
+                                            <div class="achiever-info">
+                                                <div class="achiever-name" title="P.Karthik">P.Karthik</div>
+                                                <div class="achiever-company" title="ATHVIK TECH PARK">ATHVIK TECH PARK
+                                                </div>
+                                            </div>
+                                            <span class="achiever-val">398</span>
+                                        </div>
+
+                                        <!-- Row 2 -->
+                                        <div class="achiever-rank-row">
+                                            <span class="achiever-rank-num">2</span>
+                                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=faces"
+                                                alt="M. Vadivelu" class="achiever-avatar-img"
+                                                onerror="this.onerror=null; this.src='avatar-1.svg';">
+                                            <div class="achiever-info">
+                                                <div class="achiever-name" title="M. Vadivelu">M. Vadivelu</div>
+                                                <div class="achiever-company" title="DNC Chits Pvt Ltd">DNC Chits Pvt
+                                                    Ltd</div>
+                                            </div>
+                                            <span class="achiever-val">260</span>
+                                        </div>
+
+                                        <!-- Row 3 -->
+                                        <div class="achiever-rank-row">
+                                            <span class="achiever-rank-num">3</span>
+                                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop&crop=faces"
+                                                alt="A.Ruban" class="achiever-avatar-img"
+                                                onerror="this.onerror=null; this.src='avatar-2.svg';">
+                                            <div class="achiever-info">
+                                                <div class="achiever-name" title="A.Ruban">A.Ruban</div>
+                                                <div class="achiever-company" title="Nivedha Cooling Solutions">Nivedha
+                                                    Cooling Solutions</div>
+                                            </div>
+                                            <span class="achiever-val">244</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="achiever-card-bottom">
+                                        <a href="#" class="achiever-card-footer-link">
+                                            <span>All 121s</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3: RFLs -->
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="achiever-card-item">
+                                    <div class="achiever-card-top">
+                                        <div class="achiever-ribbon">
+                                            <i class="fa-solid fa-location-crosshairs achiever-ribbon-icon"></i>
+                                            <span>RFLs</span>
+                                        </div>
+                                        <span class="achiever-top-badge">Top 3 Achievers</span>
+                                    </div>
+
+                                    <div class="achiever-rows-list">
+                                        <!-- Row 1 -->
+                                        <div class="achiever-rank-row">
+                                            <span class="achiever-rank-num">1</span>
+                                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&h=100&fit=crop&crop=faces"
+                                                alt="D.Kalidoss" class="achiever-avatar-img"
+                                                onerror="this.onerror=null; this.src='avatar-3.svg';">
+                                            <div class="achiever-info">
+                                                <div class="achiever-name" title="D.Kalidoss">D.Kalidoss</div>
+                                                <div class="achiever-company" title="DSK CONSTRUCTIONS">DSK
+                                                    CONSTRUCTIONS</div>
+                                            </div>
+                                            <span class="achiever-val">1,200</span>
+                                        </div>
+
+                                        <!-- Row 2 -->
+                                        <div class="achiever-rank-row">
+                                            <span class="achiever-rank-num">2</span>
+                                            <img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=100&h=100&fit=crop&crop=faces"
+                                                alt="K.Vijay Kumar" class="achiever-avatar-img"
+                                                onerror="this.onerror=null; this.src='avatar-4.svg';">
+                                            <div class="achiever-info">
+                                                <div class="achiever-name" title="K.Vijay Kumar">K.Vijay Kumar</div>
+                                                <div class="achiever-company" title="SK Bridal Collections">SK Bridal
+                                                    Collections</div>
+                                            </div>
+                                            <span class="achiever-val">1,038</span>
+                                        </div>
+
+                                        <!-- Row 3 -->
+                                        <div class="achiever-rank-row">
+                                            <span class="achiever-rank-num">3</span>
+                                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=faces"
+                                                alt="ER.K.P. Vijayakumar" class="achiever-avatar-img"
+                                                onerror="this.onerror=null; this.src='avatar-1.svg';">
+                                            <div class="achiever-info">
+                                                <div class="achiever-name" title="ER.K.P. Vijayakumar">ER.K.P.
+                                                    Vijayakumar</div>
+                                                <div class="achiever-company" title="VIJAY ASSOCIATES">VIJAY ASSOCIATES
+                                                </div>
+                                            </div>
+                                            <span class="achiever-val">818</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="achiever-card-bottom">
+                                        <a href="#" class="achiever-card-footer-link">
+                                            <span>All RFLs</span>
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section 1 -->
+                <div class="row g-4 mb-4">
+                    <div class="col-12">
+                        <div class="card border-0 shadow-sm rounded-4 h-100 p-3 p-sm-4">
+                            <div class="chart-card-header">
+                                <div class="chart-header-title-wrap">
+                                    <div class="modern-stat-icon modern-stat-icon-danger me-3 flex-shrink-0"
+                                        style="color: #c4161c; background: #fee2e2;">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold text-dark mb-1" style="font-size: 1.05rem;">Overall Business
+                                            Achieved</h6>
+                                        <h3 class="fw-bolder mb-0" style="letter-spacing: -0.5px; color: #c4161c;">
+                                            11,23,59,001</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-container" style="position: relative; height:250px; width:100%">
+                                <canvas id="businessChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="card border-0 shadow-sm rounded-4 h-100 p-3 p-sm-4">
+                            <div class="chart-card-header">
+                                <div class="chart-header-title-wrap">
+                                    <div class="modern-stat-icon modern-stat-icon-danger me-3 flex-shrink-0">
+                                        <i class="fa-solid fa-chart-column"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold text-dark mb-0" style="font-size: 1.05rem;">Attendance
+                                            Overview</h6>
+                                        <span class="text-muted small">Visitors, 121s, RFLs &amp; TYNs month-wise
+                                            breakdown</span>
+                                    </div>
+                                </div>
+                                <div class="chart-legend-group">
+                                    <span class="chart-legend-item"><span class="badge-dot"
+                                            style="background-color: #198754"></span> Visitors</span>
+                                    <span class="chart-legend-item"><span class="badge-dot"
+                                            style="background-color: #0c3c7c"></span> 121s</span>
+                                    <span class="chart-legend-item"><span class="badge-dot"
+                                            style="background-color: #ffc107"></span> RFLs</span>
+                                    <span class="chart-legend-item"><span class="badge-dot"
+                                            style="background-color: #dc3545"></span> TYNs</span>
+                                </div>
+                            </div>
+                            <div class="chart-container" style="position: relative; height:250px; width:100%">
+                                <canvas id="attendanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="card border-0 shadow-sm rounded-4 h-100 p-3 p-sm-4">
+                            <div class="chart-card-header">
+                                <div class="chart-header-title-wrap">
+                                    <div class="modern-stat-icon modern-stat-icon-danger me-3 flex-shrink-0">
+                                        <i class="fa-solid fa-money-bill-wave"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold text-dark mb-0" style="font-size: 1.05rem;">Income vs Expense
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="chart-legend-group">
+                                    <span class="chart-legend-item"><span class="badge-dot"
+                                            style="background-color: #c4161c;"></span> Income</span>
+                                    <span class="chart-legend-item"><span class="badge-dot"
+                                            style="background-color: #747474ff;"></span> Expense</span>
+                                </div>
+                            </div>
+                            <div class="chart-container" style="position: relative; height:250px; width:100%">
+                                <canvas id="incomeExpenseChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pie Charts Grid -->
+                <div class="row g-4 mb-4">
+                    <!-- Business -->
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-4 h-100 p-3 p-sm-4 hover-lift">
+                            <div class="chart-card-header">
+                                <div class="chart-header-title-wrap">
+                                    <div class="modern-stat-icon modern-stat-icon-danger me-3 flex-shrink-0"
+                                        style="width: 48px; height: 48px; border-radius: 12px;">
+                                        <i class="fa-solid fa-building fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">Chapter Wise Business</h5>
+                                        <span class="text-muted small">Business generated by each chapter</span>
+                                    </div>
+                                </div>
+                                <a href="#"
+                                    class="btn btn-sm rounded-pill px-3 py-1 fw-bold d-flex align-items-center gap-2 view-report-btn flex-shrink-0"
+                                    style="font-size: 0.85rem;">
+                                    View Report <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="chart-container d-flex justify-content-center"
+                                style="position: relative; height:300px; width:100%">
+                                <canvas id="pieChartBusiness"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 121s (PEMA) -->
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-4 h-100 p-3 p-sm-4 hover-lift">
+                            <div class="chart-card-header">
+                                <div class="chart-header-title-wrap">
+                                    <div class="modern-stat-icon modern-stat-icon-danger me-3 flex-shrink-0"
+                                        style="width: 48px; height: 48px; border-radius: 12px;">
+                                        <i class="fa-solid fa-handshake fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">Chapter Wise 121s</h5>
+                                        <span class="text-muted small">121s completed by each chapter</span>
+                                    </div>
+                                </div>
+                                <a href="#"
+                                    class="btn btn-sm rounded-pill px-3 py-1 fw-bold d-flex align-items-center gap-2 view-report-btn flex-shrink-0"
+                                    style="font-size: 0.85rem;">
+                                    View Report <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="chart-container d-flex justify-content-center"
+                                style="position: relative; height:300px; width:100%">
+                                <canvas id="pieChartPEMA"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Referrals -->
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-4 h-100 p-3 p-sm-4 hover-lift">
+                            <div class="chart-card-header">
+                                <div class="chart-header-title-wrap">
+                                    <div class="modern-stat-icon modern-stat-icon-danger me-3 flex-shrink-0"
+                                        style="width: 48px; height: 48px; border-radius: 12px;">
+                                        <i class="fa-solid fa-users fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">Chapter Wise Referrals</h5>
+                                        <span class="text-muted small">Referrals given by each chapter</span>
+                                    </div>
+                                </div>
+                                <a href="#"
+                                    class="btn btn-sm rounded-pill px-3 py-1 fw-bold d-flex align-items-center gap-2 view-report-btn flex-shrink-0"
+                                    style="font-size: 0.85rem;">
+                                    View Report <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="chart-container d-flex justify-content-center"
+                                style="position: relative; height:300px; width:100%">
+                                <canvas id="pieChartReferrals"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visitors -->
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-4 h-100 p-3 p-sm-4 hover-lift">
+                            <div class="chart-card-header">
+                                <div class="chart-header-title-wrap">
+                                    <div class="modern-stat-icon modern-stat-icon-danger me-3 flex-shrink-0"
+                                        style="width: 48px; height: 48px; border-radius: 12px;">
+                                        <i class="fa-solid fa-user-group fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">Chapter Wise Visitors</h5>
+                                        <span class="text-muted small">Visitors brought by each chapter</span>
+                                    </div>
+                                </div>
+                                <a href="#"
+                                    class="btn btn-sm rounded-pill px-3 py-1 fw-bold d-flex align-items-center gap-2 view-report-btn flex-shrink-0"
+                                    style="font-size: 0.85rem;">
+                                    View Report <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="chart-container d-flex justify-content-center"
+                                style="position: relative; height:300px; width:100%">
+                                <canvas id="pieChartVisitors"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Cards (Reference Design 2) -->
+                <div class="row g-3 g-md-4 mb-4">
+                    <!-- Card 1: Pending Meeting Fees -->
+                    <div class="col-12 col-md-4">
+                        <div
+                            class="card action-card-blue h-100 p-3 p-sm-4 d-flex flex-column justify-content-between hover-lift">
+                            <!-- Background Light Dots & Waves -->
+                            <div class="ambient-dot dot-blue-1"></div>
+                            <div class="ambient-dot dot-blue-2"></div>
+                            <div class="ambient-dot dot-blue-3"></div>
+                            <div class="action-card-waves"></div>
+
+                            <div class="position-relative z-2">
+                                <!-- Top Row: Avatars & Glass Trend Icon -->
+                                <div class="d-flex align-items-center justify-content-between mb-3 mb-sm-4">
+                                    <div class="avatar-stack d-flex align-items-center">
+                                        <img src="avatar-1.svg"
+                                            class="avatar-stack-item rounded-circle border border-2 border-white shadow-sm"
+                                            style="z-index: 5;" alt="Member 1">
+                                        <img src="avatar-2.svg"
+                                            class="avatar-stack-item rounded-circle border border-2 border-white shadow-sm"
+                                            style="z-index: 4;" alt="Member 2">
+                                        <img src="avatar-3.svg"
+                                            class="avatar-stack-item rounded-circle border border-2 border-white shadow-sm"
+                                            style="z-index: 3;" alt="Member 3">
+                                        <img src="avatar-4.svg"
+                                            class="avatar-stack-item rounded-circle border border-2 border-white shadow-sm"
+                                            style="z-index: 2;" alt="Member 4">
+                                        <div class="avatar-stack-item avatar-badge-count bg-white text-primary rounded-circle fw-bold border border-2 border-white d-flex justify-content-center align-items-center shadow-sm"
+                                            style="z-index: 1; color: #c4161c !important;">+5</div>
+                                    </div>
+                                    <div class="card-top-icon-btn">
+                                        <i class="fa-solid fa-arrow-trend-up"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Text Content -->
+                                <div>
+                                    <p class="mb-1 fw-semibold text-white text-opacity-75 small">8 Members Fees Pending
+                                    </p>
+                                    <h4 class="fw-bold text-white mb-3 mb-sm-4 action-card-title">Follow Up
+                                        on<br>Payments!</h4>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Left Button -->
+                            <div class="position-relative z-2 mt-auto pt-2">
+                                <a href="#fees" class="action-card-btn">
+                                    View Reports <i class="fa-solid fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Meetings Absentees List -->
+                    <div class="col-12 col-md-4">
+                        <div
+                            class="card action-card-purple h-100 p-3 p-sm-4 d-flex flex-column justify-content-between hover-lift">
+                            <!-- Background Dot Matrix -->
+                            <div class="dot-grid-matrix">
+                                <span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+
+                            <div class="position-relative z-2">
+                                <!-- Top Row: Avatars & Glass User Icon -->
+                                <div class="d-flex align-items-center justify-content-between mb-3 mb-sm-4">
+                                    <div class="avatar-stack d-flex align-items-center">
+                                        <img src="avatar-4.svg"
+                                            class="avatar-stack-item rounded-circle border border-2 border-white shadow-sm"
+                                            style="z-index: 5;" alt="Member 1">
+                                        <img src="avatar-3.svg"
+                                            class="avatar-stack-item rounded-circle border border-2 border-white shadow-sm"
+                                            style="z-index: 4;" alt="Member 2">
+                                        <img src="avatar-2.svg"
+                                            class="avatar-stack-item rounded-circle border border-2 border-white shadow-sm"
+                                            style="z-index: 3;" alt="Member 3">
+                                        <img src="avatar-1.svg"
+                                            class="avatar-stack-item rounded-circle border border-2 border-white shadow-sm"
+                                            style="z-index: 2;" alt="Member 4">
+                                        <div class="avatar-stack-item avatar-badge-count bg-white rounded-circle fw-bold border border-2 border-white d-flex justify-content-center align-items-center shadow-sm"
+                                            style="z-index: 1; color: #c4161c !important;">+4</div>
+                                    </div>
+                                    <div class="card-top-icon-btn">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Text Content -->
+                                <div>
+                                    <p class="mb-1 fw-semibold text-white text-opacity-75 small">8 Members Absent</p>
+                                    <h4 class="fw-bold text-white mb-3 mb-sm-4 action-card-title">Review<br>Attendance!
+                                    </h4>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Left Button -->
+                            <div class="position-relative z-2 mt-auto pt-2">
+                                <a href="#attendance" class="action-card-btn">
+                                    View Reports <i class="fa-solid fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Birthday Celebration -->
+                    <div class="col-12 col-md-4">
+                        <div
+                            class="card action-card-teal h-100 p-3 p-sm-4 d-flex flex-column justify-content-between hover-lift">
+                            <!-- Background Confetti -->
+                            <div class="confetti-dot confetti-1"></div>
+                            <div class="confetti-dot confetti-2"></div>
+                            <div class="confetti-dot confetti-3"></div>
+                            <div class="confetti-dot confetti-4"></div>
+
+                            <!-- Top Row: Festive Pill & Glass Calendar Icon -->
+                            <div
+                                class="d-flex align-items-center justify-content-between mb-3 mb-sm-4 position-relative z-2">
+                                <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill"
+                                    style="background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); font-size: 0.78rem; font-weight: 700; color: #ffffff;">
+                                    <i class="fa-solid fa-cake-candles text-warning"></i>
+                                    <span>Today</span>
+                                </div>
+                                <div class="card-top-icon-btn">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                </div>
+                            </div>
+
+                            <div class="position-relative z-2 d-flex flex-column">
+                                <!-- Animated 3D Cake with lit candles -->
+                                <div class="birthday-cake-container mb-2">
+                                    <svg width="60" height="54" viewBox="0 0 60 54" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Cake Plate -->
+                                        <ellipse cx="30" cy="48" rx="26" ry="4" fill="rgba(255,255,255,0.4)" />
+
+                                        <!-- Bottom Cake Tier (Pink) -->
+                                        <path
+                                            d="M10 32C10 29.5 12 28 14 28H46C48 28 50 29.5 50 32V44C50 46.5 48 48 46 48H14C12 48 10 46.5 10 44V32Z"
+                                            fill="#F472B6" />
+                                        <!-- Bottom Tier Shadow/Base -->
+                                        <path
+                                            d="M10 38C10 44 14 48 30 48C46 48 50 44 50 38V44C50 46.5 48 48 46 48H14C12 48 10 46.5 10 44V38Z"
+                                            fill="#EC4899" />
+                                        <!-- Bottom Tier Frosting Drips -->
+                                        <path
+                                            d="M10 32C13 35 16 32 19 34C22 36 25 32 28 35C31 37 34 32 37 35C40 37 43 32 46 34C48 35 50 32 50 32V28H10V32Z"
+                                            fill="#FFFFFF" />
+
+                                        <!-- Top Cake Tier (White/Light Pink) -->
+                                        <path d="M16 20C16 18.5 17.5 17 19 17H41C42.5 17 44 18.5 44 20V28H16V20Z"
+                                            fill="#FDF2F8" />
+                                        <!-- Top Tier Middle Ribbon -->
+                                        <rect x="16" y="22" width="28" height="3" fill="#F472B6" />
+
+                                        <!-- Left Candle (Cyan) -->
+                                        <rect x="21" y="9" width="3" height="8" rx="1.5" fill="#38BDF8" />
+                                        <path class="cake-flame" d="M22.5 4C23.5 6 24 7.5 22.5 9C21 7.5 21.5 6 22.5 4Z"
+                                            fill="#F59E0B" />
+                                        <circle cx="22.5" cy="7" r="1" fill="#FEF08A" />
+
+                                        <!-- Middle Candle (Pink) -->
+                                        <rect x="28.5" y="7" width="3" height="10" rx="1.5" fill="#F43F5E" />
+                                        <path class="cake-flame" d="M30 2C31 4 31.5 5.5 30 7C28.5 5.5 29 4 30 2Z"
+                                            fill="#F59E0B" />
+                                        <circle cx="30" cy="5" r="1" fill="#FEF08A" />
+
+                                        <!-- Right Candle (Yellow) -->
+                                        <rect x="36" y="9" width="3" height="8" rx="1.5" fill="#FBBF24" />
+                                        <path class="cake-flame" d="M37.5 4C38.5 6 39 7.5 37.5 9C36 7.5 36.5 6 37.5 4Z"
+                                            fill="#F59E0B" />
+                                        <circle cx="37.5" cy="7" r="1" fill="#FEF08A" />
+                                    </svg>
+                                </div>
+
+                                <h4 class="fw-bold text-white mb-1 action-card-title" style="font-size: 1.25rem;">
+                                    No Birthdays Today!</h4>
+                                <p class="mb-3 text-white text-opacity-75 small" style="line-height: 1.4;">
+                                    Looks like it's a quiet day. Check back tomorrow to see if anyone is celebrating!
+                                </p>
+                            </div>
+
+                            <!-- Bottom Left Button -->
+                            <div class="position-relative z-2 mt-auto pt-2">
+                                <a href="#calendar" class="action-card-btn">
+                                    View Calendar <i class="fa-solid fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Category Leaderboard & Spotlight (Reference 2) -->
+                <div class="leaderboard-wrapper mb-4">
+                    <!-- Category Tabs Bar -->
+                    <div class="leaderboard-tabs-bar">
+                        <button class="leaderboard-tab-btn active" data-tab="points">
+                            <i class="fa-solid fa-star"></i> Points
+                        </button>
+                        <button class="leaderboard-tab-btn" data-tab="rfls">
+                            <i class="fa-solid fa-arrows-split-up-and-left"></i> RFLs Given
+                        </button>
+                        <button class="leaderboard-tab-btn" data-tab="business">
+                            <i class="fa-solid fa-briefcase"></i> Business Given
+                        </button>
+                        <button class="leaderboard-tab-btn" data-tab="121s">
+                            <i class="fa-solid fa-arrows-rotate"></i> 121s
+                        </button>
+                        <button class="leaderboard-tab-btn" data-tab="visitors">
+                            <i class="fa-solid fa-users"></i> Visitors Given
+                        </button>
+                        <button class="leaderboard-tab-btn" data-tab="chiefguests">
+                            <i class="fa-solid fa-crown"></i> Chief Guests
+                        </button>
+                        <button class="leaderboard-tab-btn" data-tab="powerdates">
+                            <i class="fa-solid fa-calendar-days"></i> Power Dates
+                        </button>
+                        <button class="leaderboard-tab-btn" data-tab="inductees">
+                            <i class="fa-solid fa-user-plus"></i> Inductees
+                        </button>
+                    </div>
+
+                    <!-- Main Container Card Body -->
+                    <div class="p-3 p-sm-4">
+                        <div class="row g-4">
+                            <!-- Left: Top Achievers List -->
+                            <div class="col-lg-8">
+                                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="trophy-badge shadow-sm">
+                                            🏆
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold text-dark mb-0" id="leaderboard-title"
+                                                style="letter-spacing: -0.3px;">Top 10 Points Achievers</h5>
+                                            <p class="text-muted small mb-0" id="leaderboard-subtitle">Overall chapter
+                                                score ranking this quarter</p>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="btn btn-brand rounded-pill px-4 py-2 shadow-sm d-flex align-items-center fw-semibold transition-all">
+                                        <i class="fa-solid fa-cloud-arrow-down me-2 opacity-75"></i>Download PDF
+                                    </button>
+                                </div>
+
+                                <!-- Dynamic Member List -->
+                                <div id="leaderboard-list">
+                                    <!-- Rendered dynamically by script.js -->
+                                </div>
+
+
+                            </div>
+
+                            <!-- Right: Spotlight Profile Card -->
+                            <div class="col-lg-4 sticky-spotlight-col">
+                                <div
+                                    class="spotlight-card p-3 p-sm-4 d-flex flex-column justify-content-between position-relative overflow-hidden">
+                                    <!-- Animated Background Glow & Laser Waves -->
+                                    <div class="spotlight-bg-glow glow-orb-1"></div>
+                                    <div class="spotlight-bg-glow glow-orb-2"></div>
+                                    <div class="spotlight-laser-waves"></div>
+                                    <div class="spotlight-watermark" id="spotlight-watermark">1st</div>
+
+                                    <div class="spotlight-content-wrap">
+                                        <!-- Header Badges -->
+                                        <div class="d-flex align-items-center justify-content-between mb-4">
+                                            <div class="spotlight-badge-left" id="spotlight-title-badge">
+                                                <i class="fa-solid fa-crown text-warning me-1"></i> OVERALL POINTS KING
+                                            </div>
+                                            <div class="spotlight-badge-right" id="spotlight-rank-badge">
+                                                <i class="fa-solid fa-arrow-trend-up me-1"></i> RANK #1
+                                            </div>
+                                        </div>
+
+                                        <!-- Profile Header -->
+                                        <div class="d-flex align-items-center gap-3 mb-4">
+                                            <div class="spotlight-avatar-box">
+                                                <div class="spotlight-avatar">
+                                                    <i class="fa-solid fa-user"></i>
+                                                </div>
+                                                <div class="spotlight-avatar-badge" id="spotlight-avatar-badge">
+                                                    <i class="fa-solid fa-crown text-warning"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h5 class="fw-bold text-white mb-1" id="spotlight-name"
+                                                    style="font-size: 1.25rem; letter-spacing: 0.2px;">B.Sathiyanathan
+                                                </h5>
+                                                <span class="small" id="spotlight-role-title"
+                                                    style="color: rgba(255,255,255,0.85); font-size: 0.82rem;">Boss -
+                                                    Magnum, Boss Chennai 1</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Total Score Banner -->
+                                        <div
+                                            class="spotlight-points-box mb-4 d-flex align-items-center justify-content-between">
+                                            <div>
+                                                <div class="spotlight-points-label" id="spotlight-metric-label">TOTAL
+                                                    POINTS EARNED</div>
+                                                <div class="spotlight-points-val" id="spotlight-points-val">148 pts
+                                                </div>
+                                            </div>
+                                            <div class="spotlight-leader-pill" id="spotlight-pill">
+                                                <i class="fa-solid fa-crown text-warning me-1"></i> Overall Point Leader
+                                            </div>
+                                        </div>
+
+                                        <!-- 2x2 Details Grid -->
+                                        <div class="row g-2 mb-4">
+                                            <div class="col-6">
+                                                <div class="spotlight-tile">
+                                                    <div class="tile-label"><i class="fa-solid fa-user me-1"></i> ROLE
+                                                    </div>
+                                                    <div class="tile-value text-truncate" id="spotlight-role">MEMBER
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="spotlight-tile">
+                                                    <div class="tile-label"><i class="fa-solid fa-folder me-1"></i>
+                                                        CATEGORY</div>
+                                                    <div class="tile-value text-truncate" id="spotlight-category">
+                                                        Services</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="spotlight-tile">
+                                                    <div class="tile-label"><i class="fa-solid fa-building me-1"></i>
+                                                        COMPANY</div>
+                                                    <div class="tile-value text-truncate" id="spotlight-company">Nithraa
+                                                        Enterprises</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="spotlight-tile">
+                                                    <div class="tile-label"><i class="fa-solid fa-phone me-1"></i>
+                                                        CONTACT</div>
+                                                    <div class="tile-value text-truncate" id="spotlight-contact">
+                                                        9994265055</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bottom Button -->
+                                    <div class="spotlight-content-wrap mt-auto">
+                                        <button
+                                            class="btn spotlight-btn w-100 d-flex align-items-center justify-content-center gap-2">
+                                            View Full Profile <i class="fa-solid fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /#page-content-wrapper -->
+                </div>
+
+                <!-- App Footer -->
+                <footer class="app-footer">
+                    <div class="app-footer-left">
+                        Copyright © 2026. BOSS. All Rights Reserved.
+                    </div>
+                    <div class="app-footer-right">
+                        <a href="https://www.innoblitz.global/" target="_blank" rel="noopener noreferrer">Design &amp;
+                            Developed By Innoblitz Technologies And Systems Pvt Ltd</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- Search Popup Modal (Command Palette) -->
+        <div class="search-modal-backdrop" id="searchModalBackdrop" aria-hidden="true">
+            <div class="search-modal-dialog" id="searchModalDialog" role="dialog" aria-modal="true">
+                <!-- Search Input Header -->
+                <div class="search-modal-header">
+                    <i class="fa-solid fa-magnifying-glass search-modal-icon"></i>
+                    <input type="text" id="search-modal-input" class="search-modal-input"
+                        placeholder="Type a command or search..." autocomplete="off" spellcheck="false">
+                    <button type="button" class="search-modal-close" id="search-modal-close" aria-label="Close search">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Search Modal Body -->
+                <div class="search-modal-body hide-scrollbar" id="searchModalBody">
+                    <!-- Quick Access Section -->
+                    <div class="search-section" id="quickAccessSection">
+                        <div class="search-section-title">QUICK ACCESS</div>
+                        <div class="search-cards-grid">
+                            <!-- 1. Dashboard -->
+                            <a href="#" class="search-card-item" data-title="Dashboard" data-desc="View overall summary"
+                                data-keywords="dashboard summary home overall main"
+                                onclick="handleSearchItemClick('Dashboard'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-solid fa-table-cells-large"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title text-danger-brand">Dashboard</div>
+                                    <div class="search-card-desc">View overall summary</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+
+                            <!-- 2. RFLs -->
+                            <a href="#" class="search-card-item" data-title="RFLs" data-desc="View RFLs"
+                                data-keywords="rfls rfl network referrals leads business"
+                                onclick="handleSearchItemClick('RFLs'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title">RFLs</div>
+                                    <div class="search-card-desc">View RFLs</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+
+                            <!-- 3. Members -->
+                            <a href="#" class="search-card-item" data-title="Members" data-desc="Manage members"
+                                data-keywords="members user people team directory manage"
+                                onclick="handleSearchItemClick('Members'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title">Members</div>
+                                    <div class="search-card-desc">Manage members</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+
+                            <!-- 4. TYNs -->
+                            <a href="#" class="search-card-item" data-title="TYNs" data-desc="View TYNs"
+                                data-keywords="tyns tyn thank you note appreciation closed business"
+                                onclick="handleSearchItemClick('TYNs'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-regular fa-face-smile"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title">TYNs</div>
+                                    <div class="search-card-desc">View TYNs</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+
+                            <!-- 5. Meeting Schedules -->
+                            <a href="#" class="search-card-item" data-title="Meeting Schedules"
+                                data-desc="View meeting schedules"
+                                data-keywords="meeting schedules schedule calendar dates timing"
+                                onclick="handleSearchItemClick('Meeting Schedules'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-regular fa-calendar-check"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title">Meeting Schedules</div>
+                                    <div class="search-card-desc">View meeting schedules</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+
+                            <!-- 6. Events -->
+                            <a href="#" class="search-card-item" data-title="Events" data-desc="View events"
+                                data-keywords="events program celebration calendar upcoming"
+                                onclick="handleSearchItemClick('Events'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title">Events</div>
+                                    <div class="search-card-desc">View events</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+
+                            <!-- 7. Monthly Fees -->
+                            <a href="#" class="search-card-item" data-title="Monthly Fees"
+                                data-desc="Check monthly fees"
+                                data-keywords="monthly fees payments dues billing subscription finance"
+                                onclick="handleSearchItemClick('Monthly Fees'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-regular fa-credit-card"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title">Monthly Fees</div>
+                                    <div class="search-card-desc">Check monthly fees</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+
+                            <!-- 8. News Feed -->
+                            <a href="#" class="search-card-item" data-title="News Feed" data-desc="Latest updates"
+                                data-keywords="news feed updates posts announcements blog"
+                                onclick="handleSearchItemClick('News Feed'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-regular fa-newspaper"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title">News Feed</div>
+                                    <div class="search-card-desc">Latest updates</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+
+                            <!-- 9. 121s -->
+                            <a href="#" class="search-card-item" data-title="121s" data-desc="View 121s"
+                                data-keywords="121s 121 one to one chat meetings discussion networking"
+                                onclick="handleSearchItemClick('121s'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-regular fa-comments"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title">121s</div>
+                                    <div class="search-card-desc">View 121s</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+
+                            <!-- 10. Leads -->
+                            <a href="#" class="search-card-item" data-title="Leads" data-desc="View leads"
+                                data-keywords="leads target prospects clients pipeline business"
+                                onclick="handleSearchItemClick('Leads'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title">Leads</div>
+                                    <div class="search-card-desc">View leads</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- More Options Section -->
+                    <div class="search-section" id="moreOptionsSection">
+                        <div class="search-section-title">MORE OPTIONS</div>
+                        <div class="search-cards-grid">
+                            <!-- 11. Visitors -->
+                            <a href="#" class="search-card-item" data-title="Visitors" data-desc="Manage visitors"
+                                data-keywords="visitors guest manage invite attendance induction"
+                                onclick="handleSearchItemClick('Visitors'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title">Visitors</div>
+                                    <div class="search-card-desc">Manage visitors</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+
+                            <!-- 12. Finance -->
+                            <a href="#" class="search-card-item" data-title="Finance" data-desc="View finance details"
+                                data-keywords="finance accounts transactions revenue money budget expense income"
+                                onclick="handleSearchItemClick('Finance'); return false;">
+                                <div class="search-card-icon-badge">
+                                    <i class="fa-solid fa-coins"></i>
+                                </div>
+                                <div class="search-card-content">
+                                    <div class="search-card-title">Finance</div>
+                                    <div class="search-card-desc">View finance details</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- No Results State -->
+                    <div class="search-no-results d-none" id="searchNoResults">
+                        <div class="search-no-results-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <h6 class="fw-bold mb-1 text-dark">No results found</h6>
+                        <p class="text-muted small mb-0">We couldn't find anything matching your search term.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap 5 JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+        <!-- Custom JS -->
+        <script src="script.js"></script>
+</body>
+
+</html>

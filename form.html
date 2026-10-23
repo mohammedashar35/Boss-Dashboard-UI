@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Member - Boss Dashboard</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar (Left Menu Bar) -->
+        <div class="sidebar glass-sidebar" id="sidebar-wrapper">
+            <div
+                class="sidebar-heading d-flex align-items-center justify-content-between px-3 py-3 border-bottom border-secondary border-opacity-10">
+                <div class="flex-grow-1 text-center">
+                    <img src="logo.png" alt="BOSS Logo" class="img-fluid"
+                        style="max-width: 170px; height: auto; object-fit: contain; padding: 2px;">
+                </div>
+                <button type="button" class="sidebar-close-btn d-lg-none ms-2" id="sidebar-close-btn"
+                    aria-label="Close sidebar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="list-group list-group-flush mt-2">
+                <a href="index.html"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-gauge-high fa-fw me-3"></i><span>Dashboard</span>
+                </a>
+                <a href="members.html"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-users fa-fw me-3"></i><span>Members</span>
+                </a>
+                <a href="form.html"
+                    class="list-group-item list-group-item-action py-3 ripple active rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-file-pen fa-fw me-3"></i><span>Form</span>
+                </a>
+                <a href="meeting_schedules.html"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-calendar-check fa-fw me-3"></i><span>Meeting Schedules</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-calendar-days fa-fw me-3"></i><span>Monthly Meeting Fees</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-comments fa-fw me-3"></i><span>121s</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-hand-holding-dollar fa-fw me-3"></i><span>RFLs</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-link fa-fw me-3"></i><span>TYNs</span>
+                </a>
+                <!-- Visitors Dropdown Menu -->
+                <div class="sidebar-dropdown-menu mb-1" id="visitorsDropdown">
+                    <a href="#"
+                        class="sidebar-dropdown-toggle list-group-item list-group-item-action py-3 ripple rounded d-flex justify-content-between align-items-center"
+                        id="visitorsToggle" role="button" aria-expanded="false">
+                        <div class="d-flex align-items-center">
+                            <span class="sidebar-icon-wrap me-3">
+                                <svg class="visitor-funnel-icon" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <circle cx="5" cy="4.5" r="1.7" />
+                                    <path d="M2.2 9.2c0-1.5 1.2-2.5 2.8-2.5s2.8 1 2.8 2.5v.5H2.2v-.5z" />
+                                    <circle cx="12" cy="3.5" r="1.9" />
+                                    <path d="M8.8 8.8c0-1.7 1.4-2.8 3.2-2.8s3.2 1.1 3.2 2.8v.5H8.8v-.5z" />
+                                    <circle cx="19" cy="4.5" r="1.7" />
+                                    <path d="M16.2 9.2c0-1.5 1.2-2.5 2.8-2.5s2.8 1 2.8 2.5v.5h-5.6v-.5z" />
+                                    <path d="M2.5 11.5h19l-2 3.2H4.5l-2-3.2z" />
+                                    <path d="M5.5 15.7h13l-2.2 3.3H7.7l-2.2-3.3z" />
+                                    <path d="M8.5 20h7l-1 2.5h-5l-1-2.5z" />
+                                </svg>
+                            </span>
+                            <span class="dropdown-item-text">Visitors</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down dropdown-arrow ms-2 flex-shrink-0"></i>
+                    </a>
+                    <div class="sidebar-submenu-collapse" id="visitorsSubmenu">
+                        <div class="sidebar-submenu-card">
+                            <a href="#" class="sidebar-submenu-link">General</a>
+                            <a href="#" class="sidebar-submenu-link">Chief Guest</a>
+                            <a href="#" class="sidebar-submenu-link">Inductions</a>
+                            <a href="#" class="sidebar-submenu-link">Power Date</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-regular fa-calendar fa-fw me-3"></i><span>Events</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-newspaper fa-fw me-3"></i><span>News Feed</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-bullseye fa-fw me-3"></i><span>Leads</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center"><i
+                            class="fa-solid fa-coins fa-fw me-3"></i><span>Finance</span></div>
+                    <i class="fa-solid fa-chevron-down ms-2 flex-shrink-0"
+                        style="font-size: 0.65rem; opacity: 0.6;"></i>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-comment-dots fa-fw me-3"></i><span>Testimonials</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center"><i
+                            class="fa-solid fa-file-invoice fa-fw me-3"></i><span>Reports</span></div>
+                    <i class="fa-solid fa-chevron-down ms-2 flex-shrink-0"
+                        style="font-size: 0.65rem; opacity: 0.6;"></i>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center"><i
+                            class="fa-solid fa-sliders fa-fw me-3"></i><span>Masters</span></div>
+                    <i class="fa-solid fa-chevron-down ms-2 flex-shrink-0"
+                        style="font-size: 0.65rem; opacity: 0.6;"></i>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-star fa-fw me-3"></i><span>Points System</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-user-shield fa-fw me-3"></i><span>Roles & Permissions</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-arrow-right-from-bracket fa-fw me-3"></i><span>Logout</span>
+                </a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Sidebar Mobile & Tablet Backdrop -->
+        <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" class="flex-grow-1">
+
+            <!-- Top Nav (Default Header) -->
+            <nav class="navbar navbar-expand-lg py-3 px-4 shadow-none glass-header rounded-4 mb-2 header-nav-bar"
+                style="margin: 12px 12px 0 12px;">
+                <div class="d-flex align-items-center justify-content-between w-100 header-container">
+                    <!-- Left: Menu toggle & Search Bar -->
+                    <div class="header-left d-flex align-items-center">
+                        <button class="btn btn-light me-3 d-lg-none rounded-circle flex-shrink-0" id="menu-toggle"><i
+                                class="fa-solid fa-bars"></i></button>
+
+                        <!-- Search Bar Trigger -->
+                        <div class="search-bar glass-panel d-flex align-items-center" id="header-search-bar"
+                            role="button" tabindex="0" title="Click to search (Ctrl+K)">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #374151; font-size: 1.1rem;"></i>
+                            <input type="text" class="form-control border-0 shadow-none bg-transparent p-0 ms-3"
+                                id="header-search-input" placeholder="Search for tasks, projects..."
+                                style="font-size: 0.95rem; color: #4b5563; background-color: transparent !important; cursor: pointer;"
+                                readonly>
+                        </div>
+                    </div>
+
+                    <!-- Center: Live Date & Time Widget -->
+                    <div class="header-center d-none d-lg-flex justify-content-center align-items-center mx-2">
+                        <div class="header-datetime-pill">
+                            <div class="datetime-item">
+                                <div class="datetime-icon-badge">
+                                    <i class="fa-regular fa-calendar" style="color: #c4161c;"></i>
+                                </div>
+                                <span class="datetime-text" id="live-date">Thu, 10 Sep 2026</span>
+                            </div>
+                            <div class="datetime-divider"></div>
+                            <div class="datetime-item">
+                                <div class="datetime-icon-badge">
+                                    <i class="fa-regular fa-clock" style="color: #c4161c;"></i>
+                                </div>
+                                <span class="datetime-text" id="live-time">12:30:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Super Admin Profile -->
+                    <div class="header-right d-flex align-items-center gap-3 position-relative">
+                        <div class="admin-profile-trigger d-flex align-items-center" id="adminProfileTrigger"
+                            role="button" tabindex="0" aria-haspopup="true" aria-expanded="false"
+                            title="Click to view profile menu">
+                            <div class="text-end me-3 d-none d-sm-block">
+                                <div class="fw-bold text-dark lh-1 mb-1" style="font-size: 0.95rem;">Hi, Super Admin
+                                </div>
+                                <div class="text-muted lh-1" style="font-size: 0.75rem;">Super Admin</div>
+                            </div>
+                            <div
+                                class="profile-avatar-circle text-white d-flex justify-content-center align-items-center shadow-sm">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <i class="fa-solid fa-chevron-down ms-2 admin-chevron"></i>
+                        </div>
+
+                        <!-- Admin Profile Dropdown Popup -->
+                        <div class="admin-profile-dropdown" id="adminProfileDropdown">
+                            <div class="admin-dropdown-user-box">
+                                <div class="admin-box-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="admin-box-info">
+                                    <div class="admin-box-name">Super Admin</div>
+                                    <div class="admin-box-email">superadmin@gmail.com</div>
+                                    <div class="admin-box-role">
+                                        <i class="fa-solid fa-crown"></i>
+                                        <span>Super Admin</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-dropdown-menu">
+                                <a href="#" class="admin-dropdown-item">
+                                    <i class="fa-regular fa-circle-user admin-item-icon"></i>
+                                    <span>Change Password</span>
+                                </a>
+                                <a href="#" class="admin-dropdown-item">
+                                    <i class="fa-solid fa-qrcode admin-item-icon"></i>
+                                    <span>Attendance QR Code</span>
+                                </a>
+                            </div>
+                            <a href="#" class="admin-dropdown-logout">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content Container -->
+            <div class="container-fluid px-4 py-4 main-content glass-panel"
+                style="margin: 12px; width: auto; border-radius: 20px;">
+
+                <!-- Top Row: Breadcrumb & Back Button -->
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-2 form-breadcrumb-row">
+                    <nav class="form-breadcrumb" aria-label="breadcrumb">
+                        <a href="index.html" class="d-flex align-items-center gap-1">
+                            <i class="fa-solid fa-house" style="font-size: 0.8rem;"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        <span class="form-breadcrumb-separator"><i class="fa-solid fa-chevron-right"
+                                style="font-size: 0.65rem;"></i></span>
+                        <a href="members.html">Members</a>
+                        <span class="form-breadcrumb-separator"><i class="fa-solid fa-chevron-right"
+                                style="font-size: 0.65rem;"></i></span>
+                        <span class="form-breadcrumb-current">Create Member</span>
+                    </nav>
+
+                    <a href="members.html" class="btn-form-back">
+                        <i class="fa-solid fa-arrow-left"></i> Back
+                    </a>
+                </div>
+
+                <!-- Page Header: Title & Subtitle with Icon -->
+                <div class="d-flex align-items-center gap-3 mb-4 form-page-header">
+                    <div class="form-page-header-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                        <h3 class="fw-bold mb-0 text-dark form-page-title" style="font-size: 1.6rem; letter-spacing: -0.3px;">
+                            Create Member
+                        </h3>
+                        <p class="text-muted mb-0 form-page-subtitle" style="font-size: 0.9rem;">
+                            Add a new member to the BOSS network
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Member Registration Form -->
+                <form id="createMemberForm" autocomplete="off">
+                    <div class="row g-4 mb-4">
+
+                        <!-- =======================================================
+                             Card 1: Personal Information (Top Left)
+                             ======================================================= -->
+                        <div class="col-12 col-xl-6">
+                            <div class="member-form-card">
+                                <div class="member-form-card-header">
+                                    <div class="form-card-badge">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="form-card-title">Personal Information</h5>
+                                        <p class="form-card-subtitle">Basic details and contact information</p>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <!-- Name -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Name <span
+                                                class="required-star">*</span></label>
+                                        <input type="text" class="member-input-control" placeholder="Name" required>
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Email <span
+                                                class="required-star">*</span></label>
+                                        <input type="email" class="member-input-control" placeholder="example@gmail.com"
+                                            required>
+                                    </div>
+
+                                    <!-- Mobile Number -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Mobile Number <span
+                                                class="required-star">*</span></label>
+                                        <input type="tel" class="member-input-control" placeholder="Mobile No" required>
+                                    </div>
+
+                                    <!-- Whatsapp Mobile Number -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Whatsapp Mobile Number <span
+                                                class="required-star">*</span></label>
+                                        <input type="tel" class="member-input-control" placeholder="Whatsapp Mobile No"
+                                            required>
+                                    </div>
+
+                                    <!-- Gender -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Gender <span
+                                                class="required-star">*</span></label>
+                                        <div class="member-gender-group">
+                                            <label class="member-gender-label">
+                                                <input type="radio" name="gender" value="male"
+                                                    class="member-gender-radio" checked>
+                                                <span>Male</span>
+                                            </label>
+                                            <label class="member-gender-label">
+                                                <input type="radio" name="gender" value="female"
+                                                    class="member-gender-radio">
+                                                <span>Female</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Password -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Password <span
+                                                class="required-star">*</span></label>
+                                        <div class="member-password-wrap">
+                                            <input type="password" class="member-input-control password-field"
+                                                placeholder="•••••••••" required>
+                                            <i class="fa-regular fa-eye member-password-toggle"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- Confirm Password -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Confirm Password <span
+                                                class="required-star">*</span></label>
+                                        <div class="member-password-wrap">
+                                            <input type="password" class="member-input-control password-field"
+                                                placeholder="•••••••••" required>
+                                            <i class="fa-regular fa-eye member-password-toggle"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- =======================================================
+                             Card 2: Professional Information (Top Right)
+                             ======================================================= -->
+                        <div class="col-12 col-xl-6">
+                            <div class="member-form-card">
+                                <div class="member-form-card-header">
+                                    <div class="form-card-badge">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="form-card-title">Professional Information</h5>
+                                        <p class="form-card-subtitle">Company and professional details</p>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <!-- Company Name -->
+                                    <div class="col-12">
+                                        <label class="member-field-label">Company Name <span
+                                                class="required-star">*</span></label>
+                                        <input type="text" class="member-input-control" placeholder="Company name"
+                                            required>
+                                    </div>
+
+                                    <!-- Address -->
+                                    <div class="col-12">
+                                        <label class="member-field-label">Address <span
+                                                class="required-star">*</span></label>
+                                        <textarea class="member-textarea-control" rows="2" placeholder="Address"
+                                            required></textarea>
+                                    </div>
+
+                                    <!-- Sub-columns: File upload + Avatar on Left, Bio + Products on Right -->
+                                    <div class="col-12 col-md-6">
+                                         <label class="member-field-label">Profile Image (1:1) <span
+                                                 class="required-star">*</span> <span class="text-muted fw-normal"
+                                                 style="font-size: 0.75rem;">(Max: 256whx256h)</span></label>
+                                         <div class="member-file-upload-wrapper" id="fileUploadTrigger" role="button" tabindex="0">
+                                             <input type="file" id="profileImageInput" accept="image/*" class="d-none">
+                                             <button type="button" class="btn-file-choose" id="chooseFileBtn">Choose File</button>
+                                             <span class="file-chosen-text" id="fileNameDisplay">No file chosen</span>
+                                         </div>
+                                         <div class="member-avatar-preview-box mt-2" id="avatarPreviewBox">
+                                             <i class="fa-solid fa-user" id="defaultAvatarIcon"></i>
+                                             <img src="" alt="Profile Preview" id="profileImagePreview" class="d-none">
+                                         </div>
+                                     </div>
+
+                                    <div class="col-12 col-md-6">
+                                        <!-- Bio Description -->
+                                        <div class="mb-3">
+                                            <label class="member-field-label">Bio Description</label>
+                                            <textarea class="member-textarea-control" rows="2"
+                                                placeholder="Bio description"></textarea>
+                                        </div>
+
+                                        <!-- Our Products and Services -->
+                                        <div>
+                                            <label class="member-field-label">Our Products and Services</label>
+                                            <textarea class="member-textarea-control" rows="2"
+                                                placeholder="Our Products and Services"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- =======================================================
+                             Card 3: Membership Details (Bottom Left)
+                             ======================================================= -->
+                        <div class="col-12 col-xl-6">
+                            <div class="member-form-card">
+                                <div class="member-form-card-header">
+                                    <div class="form-card-badge">
+                                        <i class="fa-solid fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="form-card-title">Membership Details</h5>
+                                        <p class="form-card-subtitle">Membership and organizational details</p>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <!-- Date of Birth -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Date of Birth</label>
+                                        <input type="date" class="member-input-control"
+                                            placeholder="Select Date of Birth">
+                                    </div>
+
+                                    <!-- Country -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Country <span
+                                                class="required-star">*</span></label>
+                                        <select class="member-select-control" required>
+                                            <option value="" selected>Select...</option>
+                                            <option value="India">India</option>
+                                            <option value="United States">United States</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="Singapore">Singapore</option>
+                                            <option value="UAE">UAE</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- State -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">State <span
+                                                class="required-star">*</span></label>
+                                        <select class="member-select-control" required>
+                                            <option value="" selected>Select...</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Kerala">Kerala</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Telangana">Telangana</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Region -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Region <span
+                                                class="required-star">*</span></label>
+                                        <select class="member-select-control" required>
+                                            <option value="" selected>Select...</option>
+                                            <option value="Boss Chennai">Boss Chennai</option>
+                                            <option value="Boss Coimbatore">Boss Coimbatore</option>
+                                            <option value="Boss Madurai">Boss Madurai</option>
+                                            <option value="Boss Bangalore">Boss Bangalore</option>
+                                            <option value="Boss Mumbai">Boss Mumbai</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Chapter -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Chapter <span
+                                                class="required-star">*</span></label>
+                                        <select class="member-select-control" required>
+                                            <option value="" selected>Select...</option>
+                                            <option value="Phoenix">Phoenix</option>
+                                            <option value="Titanium">Titanium</option>
+                                            <option value="Apex">Apex</option>
+                                            <option value="Catalyst">Catalyst</option>
+                                            <option value="Elite">Elite</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- User Role -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">User Role <span
+                                                class="required-star">*</span></label>
+                                        <select class="member-select-control" required>
+                                            <option value="" selected>Select...</option>
+                                            <option value="Member">Member</option>
+                                            <option value="Chapter Director">Chapter Director</option>
+                                            <option value="Regional Director">Regional Director</option>
+                                            <option value="Super Admin">Super Admin</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Category -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Category <span
+                                                class="required-star">*</span></label>
+                                        <select class="member-select-control" required>
+                                            <option value="" selected>Select...</option>
+                                            <option value="Information Technology">Information Technology</option>
+                                            <option value="Construction & Real Estate">Construction & Real Estate
+                                            </option>
+                                            <option value="Manufacturing">Manufacturing</option>
+                                            <option value="Healthcare">Healthcare</option>
+                                            <option value="Financial Services">Financial Services</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Date of Joining -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Date of Joining <span
+                                                class="required-star">*</span></label>
+                                        <input type="date" class="member-input-control" required>
+                                    </div>
+
+                                    <!-- Member Crowns -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Member Crowns</label>
+                                        <select class="member-select-control">
+                                            <option value="" selected>Select...</option>
+                                            <option value="Bronze Crown">Bronze Crown</option>
+                                            <option value="Silver Crown">Silver Crown</option>
+                                            <option value="Gold Crown">Gold Crown</option>
+                                            <option value="Diamond Crown">Diamond Crown</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Membership Due Date -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Membership Due Date <span
+                                                class="required-star">*</span></label>
+                                        <input type="date" class="member-input-control" required>
+                                    </div>
+
+                                    <!-- Blood Group -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Blood Group <span
+                                                class="required-star">*</span></label>
+                                        <select class="member-select-control" required>
+                                            <option value="" selected>Select...</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- GST Number -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">GST Number</label>
+                                        <input type="text" class="member-input-control" placeholder="GST">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- =======================================================
+                             Card 4: Social & Business Links (Bottom Right)
+                             ======================================================= -->
+                        <div class="col-12 col-xl-6">
+                            <div class="member-form-card">
+                                <div class="member-form-card-header">
+                                    <div class="form-card-badge">
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="form-card-title">Social & Business Links</h5>
+                                        <p class="form-card-subtitle">Online presence and reference details</p>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3">
+                                    <!-- PAN Number -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">PAN Number</label>
+                                        <input type="text" class="member-input-control" placeholder="Pan">
+                                    </div>
+
+                                    <!-- Website -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Website</label>
+                                        <input type="url" class="member-input-control" placeholder="Website">
+                                    </div>
+
+                                    <!-- Instagram Url -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Instagram Url</label>
+                                        <input type="url" class="member-input-control" placeholder="Instagram Url">
+                                    </div>
+
+                                    <!-- LinkedIn Url -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">LinkedIn Url</label>
+                                        <input type="url" class="member-input-control" placeholder="Linkedin Url">
+                                    </div>
+
+                                    <!-- Twitter Url -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Twitter Url</label>
+                                        <input type="url" class="member-input-control" placeholder="Twitter Url">
+                                    </div>
+
+                                    <!-- Youtube Url -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Youtube Url</label>
+                                        <input type="url" class="member-input-control" placeholder="Youtube Url">
+                                    </div>
+
+                                    <!-- Refered By -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Refered By <span
+                                                class="required-star">*</span></label>
+                                        <select class="member-select-control" required>
+                                            <option value="" selected>Select...</option>
+                                            <option value="Karthi Padmanaban">Karthi Padmanaban</option>
+                                            <option value="Saran Prasad">Saran Prasad</option>
+                                            <option value="D.Kalidoss">D.Kalidoss</option>
+                                            <option value="K. Vijay Kumar">K. Vijay Kumar</option>
+                                            <option value="Direct / Self">Direct / Self</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Membership Status -->
+                                    <div class="col-12 col-md-6">
+                                        <label class="member-field-label">Membership Status</label>
+                                        <div
+                                            class="form-check form-switch custom-status-switch d-flex align-items-center gap-3 pt-1">
+                                            <input class="form-check-input" type="checkbox" id="membershipStatusSwitch"
+                                                checked>
+                                            <label class="form-check-label fw-semibold text-dark mb-0"
+                                                for="membershipStatusSwitch" id="membershipStatusLabel">Active</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom Action Buttons -->
+                    <div class="d-flex justify-content-end align-items-center gap-3 mt-4 mb-2 form-actions-wrapper">
+                        <a href="members.html" class="form-action-btn-close">Close</a>
+                        <button type="submit" class="form-action-btn-save">
+                            <i class="fa-solid fa-floppy-disk"></i> Save
+                        </button>
+                    </div>
+                </form>
+                <!-- App Footer (Default Footer) -->
+                <footer class="app-footer">
+                    <div class="app-footer-left">
+                        Copyright © 2026. BOSS. All Rights Reserved.
+                    </div>
+                    <div class="app-footer-right">
+                        <a href="https://www.innoblitz.global/" target="_blank" rel="noopener noreferrer">Design &amp;
+                            Developed By Innoblitz Technologies And Systems Pvt Ltd</a>
+                    </div>
+                </footer>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+
+        </div>
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page Interactive Script -->
+    <script>
+        // 1. Mobile Sidebar Controller
+        const menuToggleBtn = document.getElementById('menu-toggle');
+        const sidebarWrapper = document.getElementById('sidebar-wrapper');
+        const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+        const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+        const wrapperElem = document.getElementById('wrapper');
+
+        function openSidebar() {
+            if (wrapperElem) wrapperElem.classList.add('toggled');
+            document.body.classList.add('sidebar-open');
+        }
+
+        function closeSidebar() {
+            if (wrapperElem) wrapperElem.classList.remove('toggled');
+            document.body.classList.remove('sidebar-open');
+        }
+
+        function toggleSidebar(e) {
+            if (e) e.preventDefault();
+            if (wrapperElem && wrapperElem.classList.contains('toggled')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        }
+
+        if (menuToggleBtn) menuToggleBtn.addEventListener('click', toggleSidebar);
+        if (sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeSidebar);
+        if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeSidebar);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeSidebar();
+        });
+
+        // 2. Visitors Dropdown Controller
+        const visitorsDropdown = document.getElementById('visitorsDropdown');
+        const visitorsToggle = document.getElementById('visitorsToggle');
+
+        if (visitorsToggle && visitorsDropdown) {
+            visitorsToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                visitorsDropdown.classList.toggle('open');
+                const isOpen = visitorsDropdown.classList.contains('open');
+                visitorsToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+        }
+
+        // 3. Admin Profile Dropdown
+        const adminTrigger = document.getElementById('adminProfileTrigger');
+        const adminDropdown = document.getElementById('adminProfileDropdown');
+
+        if (adminTrigger && adminDropdown) {
+            adminTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                adminDropdown.classList.toggle('show');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!adminTrigger.contains(e.target) && !adminDropdown.contains(e.target)) {
+                    adminDropdown.classList.remove('show');
+                }
+            });
+        }
+
+        // 4. Password Visibility Toggles
+        document.querySelectorAll('.member-password-toggle').forEach(toggleBtn => {
+            toggleBtn.addEventListener('click', function () {
+                const passwordInput = this.parentElement.querySelector('.password-field');
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    this.classList.remove('fa-eye');
+                    this.classList.add('fa-eye-slash');
+                } else {
+                    passwordInput.type = 'password';
+                    this.classList.remove('fa-eye-slash');
+                    this.classList.add('fa-eye');
+                }
+            });
+        });
+
+        // 5. Image Upload Live Preview & Custom Trigger
+        const fileUploadTrigger = document.getElementById('fileUploadTrigger');
+        const chooseFileBtn = document.getElementById('chooseFileBtn');
+        const profileImageInput = document.getElementById('profileImageInput');
+        const fileNameDisplay = document.getElementById('fileNameDisplay');
+        const profileImagePreview = document.getElementById('profileImagePreview');
+        const defaultAvatarIcon = document.getElementById('defaultAvatarIcon');
+
+        if (fileUploadTrigger && profileImageInput) {
+            fileUploadTrigger.addEventListener('click', (e) => {
+                profileImageInput.click();
+            });
+
+            if (chooseFileBtn) {
+                chooseFileBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    profileImageInput.click();
+                });
+            }
+
+            profileImageInput.addEventListener('change', function (e) {
+                const file = e.target.files[0];
+                if (file) {
+                    if (fileNameDisplay) fileNameDisplay.textContent = file.name;
+                    const reader = new FileReader();
+                    reader.onload = function (evt) {
+                        profileImagePreview.src = evt.target.result;
+                        profileImagePreview.classList.remove('d-none');
+                        defaultAvatarIcon.classList.add('d-none');
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    if (fileNameDisplay) fileNameDisplay.textContent = 'No file chosen';
+                }
+            });
+        }
+
+        // 6. Membership Status Switch Label
+        const statusSwitch = document.getElementById('membershipStatusSwitch');
+        const statusLabel = document.getElementById('membershipStatusLabel');
+
+        if (statusSwitch && statusLabel) {
+            statusSwitch.addEventListener('change', function () {
+                statusLabel.textContent = this.checked ? 'Active' : 'Inactive';
+            });
+        }
+
+        // 7. Live Date & Time Clock
+        function updateClock() {
+            const now = new Date();
+            const dateEl = document.getElementById('live-date');
+            const timeEl = document.getElementById('live-time');
+            if (dateEl) {
+                const options = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' };
+                dateEl.textContent = now.toLocaleDateString('en-GB', options);
+            }
+            if (timeEl) {
+                timeEl.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            }
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // 8. Form Submission Simulation
+        const form = document.getElementById('createMemberForm');
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Member created successfully!');
+                window.location.href = 'members.html';
+            });
+        }
+    </script>
+</body>
+
+</html>

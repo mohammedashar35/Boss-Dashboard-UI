@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Schedules - Rotary Management Board</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="sidebar glass-sidebar" id="sidebar-wrapper">
+            <div
+                class="sidebar-heading d-flex align-items-center justify-content-between px-3 py-3 border-bottom border-secondary border-opacity-10">
+                <div class="flex-grow-1 text-center">
+                    <img src="logo.png" alt="BOSS Logo" class="img-fluid"
+                        style="max-width: 170px; height: auto; object-fit: contain; padding: 2px;">
+                </div>
+                <button type="button" class="sidebar-close-btn d-lg-none ms-2" id="sidebar-close-btn"
+                    aria-label="Close sidebar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="list-group list-group-flush mt-2">
+                <a href="index.html"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-gauge-high fa-fw me-3"></i><span>Dashboard</span>
+                </a>
+                <a href="members.html"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-users fa-fw me-3"></i><span>Members</span>
+                </a>
+                <a href="form.html"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-file-pen fa-fw me-3"></i><span>Form</span>
+                </a>
+                <a href="meeting_schedules.html"
+                    class="list-group-item list-group-item-action py-3 ripple active rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-calendar-check fa-fw me-3"></i><span>Meeting Schedules</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-calendar-days fa-fw me-3"></i><span>Monthly Meeting Fees</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-comments fa-fw me-3"></i><span>121s</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-hand-holding-dollar fa-fw me-3"></i><span>RFLs</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-link fa-fw me-3"></i><span>TYNs</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center"><i
+                            class="fa-solid fa-user-plus fa-fw me-3"></i><span>Visitors</span></div>
+                    <i class="fa-solid fa-chevron-down ms-2 flex-shrink-0"
+                        style="font-size: 0.65rem; opacity: 0.6;"></i>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-regular fa-calendar fa-fw me-3"></i><span>Events</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-newspaper fa-fw me-3"></i><span>News Feed</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-bullseye fa-fw me-3"></i><span>Leads</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center"><i
+                            class="fa-solid fa-coins fa-fw me-3"></i><span>Finance</span></div>
+                    <i class="fa-solid fa-chevron-down ms-2 flex-shrink-0"
+                        style="font-size: 0.65rem; opacity: 0.6;"></i>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-comment-dots fa-fw me-3"></i><span>Testimonials</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center"><i
+                            class="fa-solid fa-file-invoice fa-fw me-3"></i><span>Reports</span></div>
+                    <i class="fa-solid fa-chevron-down ms-2 flex-shrink-0"
+                        style="font-size: 0.65rem; opacity: 0.6;"></i>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center"><i
+                            class="fa-solid fa-sliders fa-fw me-3"></i><span>Masters</span></div>
+                    <i class="fa-solid fa-chevron-down ms-2 flex-shrink-0"
+                        style="font-size: 0.65rem; opacity: 0.6;"></i>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-star fa-fw me-3"></i><span>Points System</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-user-shield fa-fw me-3"></i><span>Roles & Permissions</span>
+                </a>
+                <a href="#"
+                    class="list-group-item list-group-item-action py-3 ripple rounded mb-1 d-flex align-items-center">
+                    <i class="fa-solid fa-arrow-right-from-bracket fa-fw me-3"></i><span>Logout</span>
+                </a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Sidebar Mobile & Tablet Backdrop -->
+        <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+        <!-- Page Content Wrapper -->
+        <div id="page-content-wrapper" class="flex-grow-1">
+
+            <!-- Top Nav -->
+            <nav class="navbar navbar-expand-lg py-3 px-4 shadow-none glass-header rounded-4 mb-2 header-nav-bar"
+                style="margin: 12px 12px 0 12px;">
+                <div class="d-flex align-items-center justify-content-between w-100 header-container">
+                    <!-- Left: Menu toggle & Search Bar -->
+                    <div class="header-left d-flex align-items-center">
+                        <button class="btn btn-light me-3 d-lg-none rounded-circle flex-shrink-0" id="menu-toggle">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+
+                        <!-- Search Bar Trigger -->
+                        <div class="search-bar glass-panel d-flex align-items-center" id="header-search-bar"
+                            role="button" tabindex="0" title="Click to search (Ctrl+K)">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #374151; font-size: 1.1rem;"></i>
+                            <input type="text" class="form-control border-0 shadow-none bg-transparent p-0 ms-3"
+                                id="header-search-input" placeholder="Search for tasks, projects..."
+                                style="font-size: 0.95rem; color: #4b5563; background-color: transparent !important; cursor: pointer;"
+                                readonly>
+                        </div>
+                    </div>
+
+                    <!-- Center: Live Date & Time Widget -->
+                    <div class="header-center d-none d-lg-flex justify-content-center align-items-center mx-2">
+                        <div class="header-datetime-pill">
+                            <!-- Date Item -->
+                            <div class="datetime-item">
+                                <div class="datetime-icon-badge">
+                                    <i class="fa-regular fa-calendar"></i>
+                                </div>
+                                <span class="datetime-text" id="header-date">Wed, 09 Sep 2026</span>
+                            </div>
+
+                            <!-- Vertical Divider -->
+                            <div class="datetime-divider"></div>
+
+                            <!-- Time Item -->
+                            <div class="datetime-item">
+                                <div class="datetime-icon-badge">
+                                    <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <span class="datetime-text" id="header-time">05:01:28 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Actions & Profile -->
+                    <div class="header-right d-flex align-items-center gap-3 position-relative">
+                        <!-- Notification Bell -->
+                        <div class="header-icon-btn position-relative" id="headerNotificationBtn" role="button"
+                            tabindex="0" title="Notifications"
+                            style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; color: #475569; cursor: pointer; transition: all 0.2s ease;">
+                            <i class="fa-regular fa-bell" style="font-size: 1.1rem;"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                style="font-size: 0.65rem; padding: 3px 6px;">3</span>
+                        </div>
+
+                        <!-- Profile Trigger -->
+                        <div class="admin-profile-trigger d-flex align-items-center" id="adminProfileTrigger"
+                            role="button" tabindex="0" aria-haspopup="true" aria-expanded="false"
+                            title="Click to view profile menu">
+                            <div class="text-end me-3 d-none d-sm-block">
+                                <div class="fw-bold text-dark lh-1 mb-1" style="font-size: 0.95rem;">Hi, Super Admin
+                                </div>
+                                <div class="text-muted lh-1" style="font-size: 0.75rem;">Super Admin</div>
+                            </div>
+                            <div
+                                class="profile-avatar-circle text-white d-flex justify-content-center align-items-center shadow-sm">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <i class="fa-solid fa-chevron-down ms-2 admin-chevron"></i>
+                        </div>
+
+                        <!-- Admin Profile Dropdown Popup -->
+                        <div class="admin-profile-dropdown" id="adminProfileDropdown">
+                            <div class="admin-dropdown-user-box">
+                                <div class="admin-box-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="admin-box-info">
+                                    <div class="admin-box-name">Hi, Super Admin</div>
+                                    <div class="admin-box-role">Super Admin</div>
+                                </div>
+                            </div>
+
+                            <div class="admin-dropdown-menu-list">
+                                <a href="#" class="admin-dropdown-item">
+                                    <i class="fa-regular fa-user"></i>
+                                    <span>My Profile</span>
+                                </a>
+                                <a href="#" class="admin-dropdown-item">
+                                    <i class="fa-solid fa-sliders"></i>
+                                    <span>Account Settings</span>
+                                </a>
+                                <a href="#" class="admin-dropdown-item">
+                                    <i class="fa-regular fa-bell"></i>
+                                    <span>Notifications</span>
+                                </a>
+                            </div>
+
+                            <div class="admin-dropdown-footer">
+                                <a href="#" class="admin-dropdown-logout">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content Container -->
+            <div class="container-fluid px-4 py-4 main-content glass-panel"
+                style="margin: 12px; width: auto; border-radius: 20px;">
+
+                <!-- Page Header & Banner Card -->
+                <div class="schedules-header-card">
+                    <!-- Left: Title & Breadcrumbs -->
+                    <div class="schedules-title-wrap">
+                        <div class="schedules-title-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <div>
+                            <h1 class="schedules-title">Meeting Schedules</h1>
+                            <div class="schedules-breadcrumbs">
+                                <a href="index.html">Dashboard</a> <i class="fa-solid fa-chevron-right mx-1"
+                                    style="font-size: 0.68rem;"></i> <span class="active-crumb">Meeting Schedules</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Attendance QR Code Card -->
+                    <div class="schedules-attendance-card" id="schedulesAttendanceCard">
+                        <!-- Left: QR Code Box with Red Accent Strip -->
+                        <div class="attendance-qr-box" id="attendanceQrTrigger" role="button" tabindex="0" title="Click to enlarge QR code">
+                            <span class="attendance-qr-accent"></span>
+                            <svg class="attendance-qr-svg" viewBox="0 0 25 25" width="44" height="44" shape-rendering="crispEdges">
+                                <rect width="25" height="25" fill="#ffffff"/>
+                                <!-- Top-Left Finder 7x7 -->
+                                <path fill-rule="evenodd" d="M1 1h7v7H1zm1 1v5h5V2zm1 1h3v3H3z" fill="#0f172a"/>
+                                <!-- Top-Right Finder 7x7 -->
+                                <path fill-rule="evenodd" d="M17 1h7v7h-7zm1 1v5h5V2zm1 1h3v3h-3z" fill="#0f172a"/>
+                                <!-- Bottom-Left Finder 7x7 -->
+                                <path fill-rule="evenodd" d="M1 17h7v7H1zm1 1v5h5v-5zm1 1h3v3H3z" fill="#0f172a"/>
+                                <!-- Timing Patterns -->
+                                <path d="M9 3h1v1H9zm2 0h1v1h-1zm2 0h1v1h-1zm1 0h1v1h-1zM3 9h1v1H3zm0 2h1v1H3zm0 2h1v1H3zm0 2h1v1H3z" fill="#0f172a"/>
+                                <!-- Alignment Pattern at (15, 15) 5x5 -->
+                                <path fill-rule="evenodd" d="M15 15h5v5h-5zm1 1v3h3v-3zm1 1h1v1h-1z" fill="#0f172a"/>
+                                <!-- Realistic Data Modules -->
+                                <path d="M10 1h1v1h-1zm2 1h1v1h-1zm2 0h1v1h-1zm-3 3h2v1h-2zm-1 3h1v2H9zm2 0h1v1h-1zm2 1h2v1h-2zm-1 2h1v2h-1zm3-1h1v1h-1zm1 2h2v1h-2zm-6 2h1v1h-1zm2 0h2v1h-2zm0 2h1v1h-1zm3 0h1v2h-1zm-5 1h1v1h-1zm2 1h1v1h-1zm2 0h2v1h-2zm-7 1h1v1h-1zm2 0h1v1h-1zm1 1h1v2h-1zm4-1h2v1h-2zm-1 2h1v1h-1zm4-2h1v1h-1zm1 1h1v2h-1zm-2 2h2v1h-2zm3-3h1v1h-1zm-1 2h1v1h-1zm2 1h1v1h-1zm-5-8h1v1h-1zm3 0h1v1h-1zm2 0h2v1h-2zm-1 2h1v1h-1zm2 1h1v1h-1zm-4 1h1v1h-1zm2 0h1v1h-1z" fill="#0f172a"/>
+                            </svg>
+                        </div>
+
+                        <!-- Center: Scan Badge & Title -->
+                        <div class="attendance-info-group">
+                            <div class="attendance-scan-badge">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4161c" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 8V6a2 2 0 0 1 2-2h2"/>
+                                    <path d="M16 4h2a2 2 0 0 1 2 2v2"/>
+                                    <path d="M20 16v2a2 2 0 0 1-2 2h-2"/>
+                                    <path d="M8 20H6a2 2 0 0 1-2-2v-2"/>
+                                    <line x1="9" y1="12" x2="10.5" y2="12"/>
+                                    <line x1="13.5" y1="12" x2="15" y2="12"/>
+                                </svg>
+                            </div>
+                            <div class="attendance-text-wrap">
+                                <div class="attendance-title">Attendance</div>
+                                <div class="attendance-subtitle">Scan QR Code</div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="attendance-divider"></div>
+
+                        <!-- Right: Download Button -->
+                        <button type="button" class="attendance-download-btn" id="attendanceDownloadBtn" title="Download Attendance QR Code" aria-label="Download Attendance QR Code">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters Card -->
+                <div class="schedules-filter-card">
+                    <!-- Row 1: 4 Location Filters -->
+                    <div class="filter-grid-row1">
+                        <!-- Country -->
+                        <div class="filter-item-group">
+                            <label class="filter-field-label">
+                                <i class="fa-solid fa-globe"></i> Country
+                            </label>
+                            <div class="custom-dropdown-wrapper" id="countryDropdownWrapper">
+                                <div class="custom-dropdown-trigger" tabindex="0">
+                                    <span class="selected-text is-placeholder">Select...</span>
+                                    <i class="fa-solid fa-chevron-down dropdown-chevron"></i>
+                                </div>
+                                <div class="custom-dropdown-menu">
+                                    <div class="custom-dropdown-options-list">
+                                        <div class="custom-dropdown-option selected" data-value="">
+                                            <span>Select...</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="India">
+                                            <span>India</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="United States">
+                                            <span>United States</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="United Kingdom">
+                                            <span>United Kingdom</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Singapore">
+                                            <span>Singapore</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="United Arab Emirates">
+                                            <span>United Arab Emirates</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- State -->
+                        <div class="filter-item-group">
+                            <label class="filter-field-label">
+                                <i class="fa-solid fa-location-dot"></i> State
+                            </label>
+                            <div class="custom-dropdown-wrapper" id="stateDropdownWrapper">
+                                <div class="custom-dropdown-trigger" tabindex="0">
+                                    <span class="selected-text is-placeholder">Select...</span>
+                                    <i class="fa-solid fa-chevron-down dropdown-chevron"></i>
+                                </div>
+                                <div class="custom-dropdown-menu">
+                                    <div class="custom-dropdown-options-list">
+                                        <div class="custom-dropdown-option selected" data-value="">
+                                            <span>Select...</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Tamil Nadu">
+                                            <span>Tamil Nadu</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Kerala">
+                                            <span>Kerala</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Karnataka">
+                                            <span>Karnataka</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Maharashtra">
+                                            <span>Maharashtra</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Telangana">
+                                            <span>Telangana</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Region -->
+                        <div class="filter-item-group">
+                            <label class="filter-field-label">
+                                <i class="fa-solid fa-bullseye"></i> Region
+                            </label>
+                            <div class="custom-dropdown-wrapper" id="regionDropdownWrapper">
+                                <div class="custom-dropdown-trigger" tabindex="0">
+                                    <span class="selected-text is-placeholder">Select...</span>
+                                    <i class="fa-solid fa-chevron-down dropdown-chevron"></i>
+                                </div>
+                                <div class="custom-dropdown-menu">
+                                    <div class="custom-dropdown-options-list">
+                                        <div class="custom-dropdown-option selected" data-value="">
+                                            <span>Select...</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Chennai">
+                                            <span>Boss Chennai</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Cochin">
+                                            <span>Boss Cochin</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Madurai">
+                                            <span>Boss Madurai</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Bangalore">
+                                            <span>Boss Bangalore</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Mumbai">
+                                            <span>Boss Mumbai</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Coimbatore">
+                                            <span>Boss Coimbatore</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chapter -->
+                        <div class="filter-item-group">
+                            <label class="filter-field-label">
+                                <i class="fa-solid fa-users"></i> Chapter
+                            </label>
+                            <div class="custom-dropdown-wrapper" id="chapterDropdownWrapper">
+                                <div class="custom-dropdown-trigger" tabindex="0">
+                                    <span class="selected-text is-placeholder">Select...</span>
+                                    <i class="fa-solid fa-chevron-down dropdown-chevron"></i>
+                                </div>
+                                <div class="custom-dropdown-menu">
+                                    <div class="custom-dropdown-options-list">
+                                        <div class="custom-dropdown-option selected" data-value="">
+                                            <span>Select...</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Kongu - Agra Hub">
+                                            <span>Boss Kongu - Agra Hub</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Chennai 1 - Synergy">
+                                            <span>Boss Chennai 1 - Synergy</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Bangalore - IT City">
+                                            <span>Boss Bangalore - IT City</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Chennai 2 - Excel">
+                                            <span>Boss Chennai 2 - Excel</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Kongu - Manchester">
+                                            <span>Boss Kongu - Manchester</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Boss Chennai 2 - Quantum">
+                                            <span>Boss Chennai 2 - Quantum</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Status, Date Range & View Switcher -->
+                    <div class="filter-grid-row2">
+                        <!-- Meeting Status -->
+                        <div class="filter-item-group" style="min-width: 240px;">
+                            <label class="filter-field-label">
+                                <i class="fa-regular fa-circle-dot"></i> Meeting Status
+                            </label>
+                            <div class="custom-dropdown-wrapper" id="statusDropdownWrapper">
+                                <div class="custom-dropdown-trigger" tabindex="0">
+                                    <span class="selected-text is-placeholder">Select...</span>
+                                    <i class="fa-solid fa-chevron-down dropdown-chevron"></i>
+                                </div>
+                                <div class="custom-dropdown-menu">
+                                    <div class="custom-dropdown-options-list">
+                                        <div class="custom-dropdown-option selected" data-value="">
+                                            <span>Select...</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Scheduled">
+                                            <span>Scheduled</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="In Progress">
+                                            <span>In Progress</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Completed">
+                                            <span>Completed</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="Cancelled">
+                                            <span>Cancelled</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Actions: Date Pill & View Switcher -->
+                        <div class="d-flex align-items-center gap-3 flex-wrap schedules-filter-actions">
+                            <!-- Date Selector (All 12 Months Names Only) -->
+                            <div class="custom-dropdown-wrapper" id="dateSelectorDropdownWrapper" style="min-width: 170px;">
+                                <div class="schedules-date-pill custom-dropdown-trigger" role="button" tabindex="0">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span class="selected-text">September</span>
+                                    <i class="fa-solid fa-chevron-down trigger-chevron dropdown-chevron"></i>
+                                </div>
+                                <div class="custom-dropdown-menu" style="min-width: 170px;">
+                                    <div class="custom-dropdown-options-list" style="max-height: 240px;">
+                                        <div class="custom-dropdown-option" data-value="January">
+                                            <span>January</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="February">
+                                            <span>February</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="March">
+                                            <span>March</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="April">
+                                            <span>April</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="May">
+                                            <span>May</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="June">
+                                            <span>June</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="July">
+                                            <span>July</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="August">
+                                            <span>August</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option selected" data-value="September">
+                                            <span>September</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="October">
+                                            <span>October</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="November">
+                                            <span>November</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                        <div class="custom-dropdown-option" data-value="December">
+                                            <span>December</span>
+                                            <i class="fa-solid fa-check option-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- View Switcher -->
+                            <div class="view-switcher-group" role="tablist">
+                                <button type="button" class="view-switcher-btn active" data-view="month">Month</button>
+                                <button type="button" class="view-switcher-btn" data-view="week">Week</button>
+                                <button type="button" class="view-switcher-btn" data-view="day">Day</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calendar Main Card -->
+                <div class="calendar-main-card">
+                    <!-- Top Navigation Bar -->
+                    <div class="calendar-top-bar">
+                        <div class="calendar-nav-controls">
+                            <button type="button" class="cal-nav-btn" id="calPrevBtn" aria-label="Previous Month">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button type="button" class="cal-nav-btn" id="calNextBtn" aria-label="Next Month">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <h2 class="calendar-month-title" id="calendarMonthTitle">September 2026</h2>
+
+                        <div style="width: 76px;"></div> <!-- Spacer for perfect centering -->
+                    </div>
+
+                    <!-- Responsive Calendar Table Wrapper -->
+                    <div class="calendar-responsive-wrapper">
+                        <div class="calendar-table-container">
+                            <!-- Weekdays Header -->
+                            <div class="calendar-weekdays-row">
+                                <div class="calendar-weekday">Mon</div>
+                                <div class="calendar-weekday">Tue</div>
+                                <div class="calendar-weekday">Wed</div>
+                                <div class="calendar-weekday">Thu</div>
+                                <div class="calendar-weekday">Fri</div>
+                                <div class="calendar-weekday">Sat</div>
+                                <div class="calendar-weekday">Sun</div>
+                            </div>
+
+                            <!-- 7x5 Calendar Grid -->
+                            <div class="calendar-grid" id="calendarGrid">
+
+                                <!-- ROW 1: Aug 31 to Sep 6 -->
+                                <!-- Mon 31 (Prev Month) -->
+                                <div class="cal-day-cell other-month">
+                                    <span class="cal-day-num">31</span>
+                                </div>
+
+                                <!-- Tue 1 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">1</span>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Kongu - Agra Hub"
+                                        data-time="09:00 AM" data-date="01 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Kongu - Agra Hub</span>
+                                                <span class="meeting-chip-time">09:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Chennai 1 - Synergy"
+                                        data-time="11:00 AM" data-date="01 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - Synergy</span>
+                                                <span class="meeting-chip-time">11:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Wed 2 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">2</span>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Bangalore - IT City"
+                                        data-time="10:00 AM" data-date="02 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Bangalore - IT City</span>
+                                                <span class="meeting-chip-time">10:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Chennai 2 - Excel"
+                                        data-time="02:00 PM" data-date="02 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 2 - Excel</span>
+                                                <span class="meeting-chip-time">02:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Thu 3 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">3</span>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Kongu - Manchester"
+                                        data-time="09:30 AM" data-date="03 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Kongu - Manchester</span>
+                                                <span class="meeting-chip-time">09:30 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Chennai 1 - Victory"
+                                        data-time="11:30 AM" data-date="03 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - Victory</span>
+                                                <span class="meeting-chip-time">11:30 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-green"
+                                        data-title="Boss Chennai 1 - New Chapter 2026" data-time="04:00 PM"
+                                        data-date="03 Sep 2026" data-type="Launch Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - New Chapter
+                                                    2026</span>
+                                                <span class="meeting-chip-time">04:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Fri 4 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">4</span>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Chennai 2 - Quantum"
+                                        data-time="10:00 AM" data-date="04 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 2 - Quantum</span>
+                                                <span class="meeting-chip-time">10:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Chennai 3 - Legends"
+                                        data-time="12:00 PM" data-date="04 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 3 - Legends</span>
+                                                <span class="meeting-chip-time">12:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Kongu - Commanders"
+                                        data-time="03:00 PM" data-date="04 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Kongu - Commanders</span>
+                                                <span class="meeting-chip-time">03:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sat 5 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">5</span>
+                                    <div class="meeting-chip chip-theme-red"
+                                        data-title="Boss Chennai 1 - Fusion Chapter" data-time="10:00 AM"
+                                        data-date="05 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - Fusion Chapter</span>
+                                                <span class="meeting-chip-time">10:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Pondy - Alpha Chapter"
+                                        data-time="01:00 PM" data-date="05 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Pondy - Alpha Chapter</span>
+                                                <span class="meeting-chip-time">01:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-green"
+                                        data-title="Boss Chennai 1 - New chapter 2" data-time="04:00 PM"
+                                        data-date="05 Sep 2026" data-type="Launch Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - New chapter 2</span>
+                                                <span class="meeting-chip-time">04:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sun 6 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">6</span>
+                                    <div class="meeting-chip chip-theme-blue" data-title="Boss Chennai 1 - Chapter Four"
+                                        data-time="10:00 AM" data-date="06 Sep 2026" data-type="Sunday Special">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - Chapter Four</span>
+                                                <span class="meeting-chip-time">10:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ROW 2: Sep 7 to Sep 13 -->
+                                <!-- Mon 7 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">7</span>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Kongu - Power Circle"
+                                        data-time="09:30 AM" data-date="07 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Kongu - Power Circle</span>
+                                                <span class="meeting-chip-time">09:30 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Kongu - Pioneer - Tirupur"
+                                        data-time="11:00 AM" data-date="07 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Kongu - Pioneer - Tirupur</span>
+                                                <span class="meeting-chip-time">11:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red"
+                                        data-title="Boss Kongu - Visionary - Coimbatore" data-time="02:00 PM"
+                                        data-date="07 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Kongu - Visionary</span>
+                                                <span class="meeting-chip-time">02:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Pondy - Infinity"
+                                        data-time="04:00 PM" data-date="07 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Pondy - Infinity</span>
+                                                <span class="meeting-chip-time">04:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tue 8 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">8</span>
+                                    <div class="meeting-chip chip-theme-red"
+                                        data-title="Boss TN South - Palazza - Pudukkottai" data-time="10:00 AM"
+                                        data-date="08 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss TN South - Palazza</span>
+                                                <span class="meeting-chip-time">10:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red"
+                                        data-title="Boss Vellore Region - Fort City - Vellore" data-time="01:00 PM"
+                                        data-date="08 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Vellore - Fort City</span>
+                                                <span class="meeting-chip-time">01:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Kongu - Athena"
+                                        data-time="03:00 PM" data-date="08 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Kongu - Athena</span>
+                                                <span class="meeting-chip-time">03:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Chennai 1 - New Chapter 3"
+                                        data-time="05:00 PM" data-date="08 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - New Chapter 3</span>
+                                                <span class="meeting-chip-time">05:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Wed 9 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">9</span>
+                                    <div class="meeting-chip chip-theme-red"
+                                        data-title="Boss Chennai 1 - Smiles - Womens Chapter" data-time="10:00 AM"
+                                        data-date="09 Sep 2026" data-type="Womens Chapter">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - Smiles</span>
+                                                <span class="meeting-chip-time">10:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-green"
+                                        data-title="Boss Chennai 1 - New chapter 2" data-time="02:00 PM"
+                                        data-date="09 Sep 2026" data-type="Launch Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - New chapter 2</span>
+                                                <span class="meeting-chip-time">02:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Thu 10 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">10</span>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Kongu - Rolex"
+                                        data-time="11:00 AM" data-date="10 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Kongu - Rolex</span>
+                                                <span class="meeting-chip-time">11:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red"
+                                        data-title="Boss TN South - Ascend - Madurai" data-time="02:00 PM"
+                                        data-date="10 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss TN South - Ascend</span>
+                                                <span class="meeting-chip-time">02:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-amber"
+                                        data-title="Boss Kongu - Majesty - Womens Chapter" data-time="04:00 PM"
+                                        data-date="10 Sep 2026" data-type="Womens Chapter">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Kongu - Majesty</span>
+                                                <span class="meeting-chip-time">04:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Fri 11 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">11</span>
+                                    <div class="meeting-chip chip-theme-green" data-title="Boss Chennai 1 - Harbour"
+                                        data-time="10:00 AM" data-date="11 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - Harbour</span>
+                                                <span class="meeting-chip-time">10:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-green"
+                                        data-title="Boss Chennai 1 - Friday chapter" data-time="01:00 PM"
+                                        data-date="11 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - Friday chapter</span>
+                                                <span class="meeting-chip-time">01:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-green"
+                                        data-title="Boss Chennai 1 - New chapter 2" data-time="04:00 PM"
+                                        data-date="11 Sep 2026" data-type="Launch Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - New chapter 2</span>
+                                                <span class="meeting-chip-time">04:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sat 12 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">12</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="12">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Sun 13 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">13</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="13">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- ROW 3: Sep 14 to Sep 20 -->
+                                <!-- Mon 14 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">14</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="14">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Tue 15 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">15</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="15">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Wed 16 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">16</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="16">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Thu 17 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">17</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="17">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Fri 18 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">18</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="18">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Sat 19 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">19</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="19">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Sun 20 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">20</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="20">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- ROW 4: Sep 21 to Sep 27 -->
+                                <!-- Mon 21 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">21</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="21">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Tue 22 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">22</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="22">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Wed 23 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">23</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="23">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Thu 24 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">24</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="24">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Fri 25 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">25</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="25">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Sat 26 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">26</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="26">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Sun 27 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">27</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="27">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- ROW 5: Sep 28 to Oct 4 -->
+                                <!-- Mon 28 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">28</span>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Kongu - Agra Hub"
+                                        data-time="09:00 AM" data-date="28 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Kongu - Agra Hub</span>
+                                                <span class="meeting-chip-time">09:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Chennai 1 - Synergy"
+                                        data-time="11:00 AM" data-date="28 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - Synergy</span>
+                                                <span class="meeting-chip-time">11:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tue 29 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">29</span>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Bangalore - IT City"
+                                        data-time="10:00 AM" data-date="29 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Bangalore - IT City</span>
+                                                <span class="meeting-chip-time">10:00 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Chennai 2 - Excel"
+                                        data-time="02:00 PM" data-date="29 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 2 - Excel</span>
+                                                <span class="meeting-chip-time">02:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Wed 30 -->
+                                <div class="cal-day-cell">
+                                    <span class="cal-day-num">30</span>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Kongu - Manchester"
+                                        data-time="09:30 AM" data-date="30 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Kongu - Manchester</span>
+                                                <span class="meeting-chip-time">09:30 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-red" data-title="Boss Chennai 1 - Victory"
+                                        data-time="11:30 AM" data-date="30 Sep 2026" data-type="Chapter Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - Victory</span>
+                                                <span class="meeting-chip-time">11:30 AM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meeting-chip chip-theme-green"
+                                        data-title="Boss Chennai 1 - New Chapter 2026" data-time="04:00 PM"
+                                        data-date="30 Sep 2026" data-type="Launch Meeting">
+                                        <div class="meeting-chip-left">
+                                            <div class="meeting-chip-avatar"><i class="fa-solid fa-user"></i></div>
+                                            <div class="meeting-chip-content">
+                                                <span class="meeting-chip-title">Boss Chennai 1 - New Chapter
+                                                    2026</span>
+                                                <span class="meeting-chip-time">04:00 PM &rarr;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Thu 1 (Oct) -->
+                                <div class="cal-day-cell other-month">
+                                    <span class="cal-day-num">1</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="1">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Fri 2 (Oct) -->
+                                <div class="cal-day-cell other-month">
+                                    <span class="cal-day-num">2</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="2">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Sat 3 (Oct) -->
+                                <div class="cal-day-cell other-month">
+                                    <span class="cal-day-num">3</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="3">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                                <!-- Sun 4 (Oct) -->
+                                <div class="cal-day-cell other-month">
+                                    <span class="cal-day-num">4</span>
+                                    <button type="button" class="btn-cell-add-meeting" data-day="4">
+                                        <i class="fa-solid fa-plus"></i> Add Meeting
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Summary Bar -->
+                    <div class="calendar-summary-bar">
+                        <!-- Left: Total Meetings Stat -->
+                        <div class="summary-stats-wrap">
+                            <div class="summary-icon-box">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </div>
+                            <div class="summary-text-box">
+                                <span class="summary-label">Total Meetings</span>
+                                <div class="summary-data-row">
+                                    <span class="summary-count" id="totalMeetingsCount">18</span>
+                                    <span class="summary-trend-badge">
+                                        <i class="fa-solid fa-arrow-up"></i> 12%
+                                    </span>
+                                    <span class="summary-trend-sub">vs last month</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Add Meeting Primary Button -->
+                        <button type="button" class="btn-primary-add-meeting" id="btnOpenAddMeetingModal">
+                            <i class="fa-solid fa-plus"></i> Add Meeting
+                        </button>
+                    </div>
+                </div>
+                <!-- App Footer -->
+                <footer class="app-footer">
+                    <div class="app-footer-left">
+                        Copyright © 2026. BOSS. All Rights Reserved.
+                    </div>
+                    <div class="app-footer-right">
+                        <a href="https://www.innoblitz.global/" target="_blank" rel="noopener noreferrer">Design &amp;
+                            Developed By Innoblitz Technologies And Systems Pvt Ltd</a>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- /container-fluid -->
+
+
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Add Meeting Modal -->
+    <div class="modal fade" id="addMeetingModal" tabindex="-1" aria-labelledby="addMeetingModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header bg-danger-subtle border-bottom border-danger-subtle px-4 py-3">
+                    <h5 class="modal-title fw-bold text-danger-emphasis d-flex align-items-center gap-2"
+                        id="addMeetingModalLabel">
+                        <i class="fa-solid fa-calendar-plus text-danger-brand"></i> Add New Meeting Schedule
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="addMeetingForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-dark small">Chapter Name <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control rounded-3" id="inputChapterName"
+                                placeholder="e.g. Boss Chennai 1 - Synergy" required>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-6">
+                                <label class="form-label fw-semibold text-dark small">Date <span
+                                        class="text-danger">*</span></label>
+                                <input type="date" class="form-control rounded-3" id="inputMeetingDate"
+                                    value="2026-09-15" required>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label fw-semibold text-dark small">Time <span
+                                        class="text-danger">*</span></label>
+                                <input type="time" class="form-control rounded-3" id="inputMeetingTime" value="10:00"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-6">
+                                <label class="form-label fw-semibold text-dark small">Theme / Category</label>
+                                <select class="form-select rounded-3" id="inputMeetingCategory">
+                                    <option value="chip-theme-red" selected>Coral / Chapter Meeting</option>
+                                    <option value="chip-theme-green">Green / Launch Meeting</option>
+                                    <option value="chip-theme-amber">Amber / Women's Chapter</option>
+                                    <option value="chip-theme-blue">Blue / Special Session</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label fw-semibold text-dark small">Format</label>
+                                <select class="form-select rounded-3" id="inputMeetingFormat">
+                                    <option value="In-Person" selected>In-Person Meeting</option>
+                                    <option value="Virtual">Virtual / Online</option>
+                                    <option value="Hybrid">Hybrid Session</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label fw-semibold text-dark small">Meeting Venue / Link</label>
+                            <input type="text" class="form-control rounded-3" id="inputMeetingVenue"
+                                placeholder="e.g. Hotel Grand Chola, Hall B">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer bg-light px-4 py-3 border-top">
+                    <button type="button" class="btn btn-light rounded-pill px-4"
+                        data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger-brand rounded-pill px-4 text-white"
+                        id="btnSaveNewMeeting">Schedule Meeting</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Meeting Details Modal -->
+    <div class="modal fade" id="meetingDetailsModal" tabindex="-1" aria-labelledby="meetingDetailsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header border-bottom px-4 py-3 bg-light">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="schedules-banner-icon" id="detailIconBox">
+                            <i class="fa-regular fa-calendar-check"></i>
+                        </div>
+                        <div>
+                            <h5 class="modal-title fw-bold text-dark mb-0" id="detailModalTitle">Meeting Details</h5>
+                            <span class="badge bg-danger-subtle text-danger-brand rounded-pill px-3 py-1 mt-1"
+                                id="detailCategoryBadge">Chapter Meeting</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3">
+                            <i class="fa-regular fa-calendar text-danger-brand fs-5"></i>
+                            <div>
+                                <div class="text-muted small">Date &amp; Time</div>
+                                <div class="fw-bold text-dark" id="detailDateTime">01 Sep 2026, 09:00 AM</div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3">
+                            <i class="fa-solid fa-users text-danger-brand fs-5"></i>
+                            <div>
+                                <div class="text-muted small">Chapter</div>
+                                <div class="fw-bold text-dark" id="detailChapter">Boss Kongu - Agra Hub</div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3">
+                            <i class="fa-solid fa-location-dot text-danger-brand fs-5"></i>
+                            <div>
+                                <div class="text-muted small">Format &amp; Venue</div>
+                                <div class="fw-bold text-dark" id="detailVenue">In-Person &bull; Main Convention Center
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light px-4 py-3 border-top d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill px-4"
+                        data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger-brand rounded-pill px-4 text-white"
+                        data-bs-dismiss="modal">
+                        <i class="fa-solid fa-pen-to-square me-1"></i> Edit Schedule
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attendance QR Code Modal -->
+    <div class="modal fade" id="attendanceQrModal" tabindex="-1" aria-labelledby="attendanceQrModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 20px; overflow: hidden; background: #ffffff;">
+                <div class="modal-header px-4 py-3 border-bottom d-flex align-items-center justify-content-between" style="background: #ffffff;">
+                    <div class="d-flex align-items-center gap-2">
+                        <div style="width: 36px; height: 36px; border-radius: 10px; background: #fee2e2; display: flex; align-items: center; justify-content: center; color: #c4161c;">
+                            <i class="fa-solid fa-qrcode fs-6"></i>
+                        </div>
+                        <div>
+                            <h5 class="modal-title fw-bold text-dark mb-0 fs-6" id="attendanceQrModalLabel">Meeting Attendance QR Code</h5>
+                            <span class="text-muted small">Rotary Management Board</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 text-center" style="background: #ffffff;">
+                    <!-- QR Display Frame -->
+                    <div class="p-3 mx-auto mb-3 bg-light rounded-4 border d-inline-block shadow-sm" style="max-width: 220px;">
+                        <svg class="attendance-qr-svg" viewBox="0 0 25 25" width="180" height="180" shape-rendering="crispEdges">
+                            <rect width="25" height="25" fill="#ffffff"/>
+                            <path fill-rule="evenodd" d="M1 1h7v7H1zm1 1v5h5V2zm1 1h3v3H3z" fill="#0f172a"/>
+                            <path fill-rule="evenodd" d="M17 1h7v7h-7zm1 1v5h5V2zm1 1h3v3h-3z" fill="#0f172a"/>
+                            <path fill-rule="evenodd" d="M1 17h7v7H1zm1 1v5h5v-5zm1 1h3v3H3z" fill="#0f172a"/>
+                            <path d="M9 3h1v1H9zm2 0h1v1h-1zm2 0h1v1h-1zm1 0h1v1h-1zM3 9h1v1H3zm0 2h1v1H3zm0 2h1v1H3zm0 2h1v1H3z" fill="#0f172a"/>
+                            <path fill-rule="evenodd" d="M15 15h5v5h-5zm1 1v3h3v-3zm1 1h1v1h-1z" fill="#0f172a"/>
+                            <path d="M10 1h1v1h-1zm2 1h1v1h-1zm2 0h1v1h-1zm-3 3h2v1h-2zm-1 3h1v2H9zm2 0h1v1h-1zm2 1h2v1h-2zm-1 2h1v2h-1zm3-1h1v1h-1zm1 2h2v1h-2zm-6 2h1v1h-1zm2 0h2v1h-2zm0 2h1v1h-1zm3 0h1v2h-1zm-5 1h1v1h-1zm2 1h1v1h-1zm2 0h2v1h-2zm-7 1h1v1h-1zm2 0h1v1h-1zm1 1h1v2h-1zm4-1h2v1h-2zm-1 2h1v1h-1zm4-2h1v1h-1zm1 1h1v2h-1zm-2 2h2v1h-2zm3-3h1v1h-1zm-1 2h1v1h-1zm2 1h1v1h-1zm-5-8h1v1h-1zm3 0h1v1h-1zm2 0h2v1h-2zm-1 2h1v1h-1zm2 1h1v1h-1zm-4 1h1v1h-1zm2 0h1v1h-1z" fill="#0f172a"/>
+                        </svg>
+                    </div>
+
+                    <h6 class="fw-bold text-dark mb-1">Scan for Instant Check-In</h6>
+                    <p class="text-muted small mb-3">Members can scan this code using their mobile phone to mark meeting attendance instantly.</p>
+
+                    <div class="d-flex align-items-center justify-content-center gap-2 p-2 bg-light rounded-pill border">
+                        <i class="fa-solid fa-link text-muted ms-2"></i>
+                        <span class="text-dark small fw-semibold font-monospace">rotary.org/att/RMB-2026-SEP</span>
+                        <button type="button" class="btn btn-sm btn-white rounded-pill px-3 shadow-sm border ms-auto" id="copyAttendanceLinkBtn" style="background:#fff;">
+                            <i class="fa-regular fa-copy me-1"></i> Copy
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light px-4 py-3 border-top d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger-brand rounded-pill px-4 text-white" id="modalDownloadQrBtn">
+                        <i class="fa-solid fa-download me-1"></i> Download QR
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Popup Modal (Command Palette) -->
+    <div class="search-modal-backdrop" id="searchModalBackdrop" aria-hidden="true">
+        <div class="search-modal-dialog" id="searchModalDialog" role="dialog" aria-modal="true">
+            <div class="search-modal-header">
+                <i class="fa-solid fa-magnifying-glass search-modal-icon"></i>
+                <input type="text" id="search-modal-input" class="search-modal-input"
+                    placeholder="Type a command or search..." autocomplete="off" spellcheck="false">
+                <button type="button" class="search-modal-close" id="search-modal-close" aria-label="Close search">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="search-modal-body hide-scrollbar" id="searchModalBody">
+                <div class="search-section" id="quickAccessSection">
+                    <div class="search-section-title">QUICK ACCESS</div>
+                    <div class="search-cards-grid">
+                        <a href="index.html" class="search-card-item">
+                            <div class="search-card-icon-badge">
+                                <i class="fa-solid fa-table-cells-large"></i>
+                            </div>
+                            <div class="search-card-content">
+                                <div class="search-card-title text-danger-brand">Dashboard</div>
+                                <div class="search-card-desc">View overall summary</div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                        </a>
+                        <a href="members.html" class="search-card-item">
+                            <div class="search-card-icon-badge">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div class="search-card-content">
+                                <div class="search-card-title">Members</div>
+                                <div class="search-card-desc">Manage all members</div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                        </a>
+                        <a href="meeting_schedules.html" class="search-card-item">
+                            <div class="search-card-icon-badge">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <div class="search-card-content">
+                                <div class="search-card-title text-danger-brand">Meeting Schedules</div>
+                                <div class="search-card-desc">Calendar and schedule meetings</div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right search-card-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Meeting Schedules Script -->
+    <script>
+        // ----------------------------------------------------
+        // Live Date & Time Clock
+        // ----------------------------------------------------
+        function updateLiveDateTime() {
+            const now = new Date();
+            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+            const dayName = days[now.getDay()];
+            const dateNum = String(now.getDate()).padStart(2, '0');
+            const monthName = months[now.getMonth()];
+            const year = now.getFullYear();
+
+            const dateStr = `${dayName}, ${dateNum} ${monthName} ${year}`;
+            const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+
+            const dateEl = document.getElementById('header-date');
+            const timeEl = document.getElementById('header-time');
+            if (dateEl) dateEl.textContent = dateStr;
+            if (timeEl) timeEl.textContent = timeStr;
+        }
+        setInterval(updateLiveDateTime, 1000);
+        updateLiveDateTime();
+
+        // ----------------------------------------------------
+        // Sidebar Toggle (Mobile & Tablet)
+        // ----------------------------------------------------
+        const menuToggleBtn = document.getElementById('menu-toggle');
+        const sidebarWrapper = document.getElementById('sidebar-wrapper');
+        const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+        const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+        const wrapperElem = document.getElementById('wrapper');
+
+        function openSidebar() {
+            if (wrapperElem) wrapperElem.classList.add('toggled');
+            document.body.classList.add('sidebar-open');
+            if (sidebarBackdrop) sidebarBackdrop.classList.add('show');
+        }
+
+        function closeSidebar() {
+            if (wrapperElem) wrapperElem.classList.remove('toggled');
+            document.body.classList.remove('sidebar-open');
+            if (sidebarBackdrop) sidebarBackdrop.classList.remove('show');
+        }
+
+        function toggleSidebar(e) {
+            if (e) e.preventDefault();
+            if (wrapperElem && wrapperElem.classList.contains('toggled')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        }
+
+        if (menuToggleBtn) menuToggleBtn.addEventListener('click', toggleSidebar);
+        if (sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeSidebar);
+        if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeSidebar);
+
+        if (sidebarWrapper) {
+            sidebarWrapper.querySelectorAll('a.list-group-item').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 992) closeSidebar();
+                });
+            });
+        }
+
+        // ----------------------------------------------------
+        // Custom Glass Dropdowns
+        // ----------------------------------------------------
+        function closeAllCustomDropdowns() {
+            document.querySelectorAll('.custom-dropdown-wrapper.active').forEach(w => {
+                w.classList.remove('active');
+                const itemGroup = w.closest('.filter-item-group');
+                if (itemGroup) {
+                    itemGroup.classList.remove('dropdown-open');
+                    itemGroup.style.zIndex = '';
+                }
+                const row = w.closest('.filter-grid-row1, .filter-grid-row2, .schedules-filter-actions');
+                if (row) {
+                    row.classList.remove('dropdown-open');
+                    row.style.zIndex = '';
+                }
+                const card = w.closest('.schedules-filter-card');
+                if (card) {
+                    card.classList.remove('dropdown-open');
+                    card.style.zIndex = '';
+                }
+            });
+        }
+
+        document.querySelectorAll('.custom-dropdown-wrapper').forEach(wrapper => {
+            const trigger = wrapper.querySelector('.custom-dropdown-trigger');
+            const options = wrapper.querySelectorAll('.custom-dropdown-option');
+            const textSpan = trigger ? trigger.querySelector('.selected-text') : null;
+
+            if (trigger) {
+                trigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const wasActive = wrapper.classList.contains('active');
+                    closeAllCustomDropdowns();
+                    if (!wasActive) {
+                        wrapper.classList.add('active');
+                        const itemGroup = wrapper.closest('.filter-item-group');
+                        if (itemGroup) {
+                            itemGroup.classList.add('dropdown-open');
+                            itemGroup.style.zIndex = '99999';
+                        }
+                        const row = wrapper.closest('.filter-grid-row1, .filter-grid-row2, .schedules-filter-actions');
+                        if (row) {
+                            row.classList.add('dropdown-open');
+                            row.style.zIndex = '99999';
+                        }
+                        const card = wrapper.closest('.schedules-filter-card');
+                        if (card) {
+                            card.classList.add('dropdown-open');
+                            card.style.zIndex = '99999';
+                        }
+                    }
+                });
+            }
+
+            options.forEach(opt => {
+                opt.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const val = opt.getAttribute('data-value') || '';
+                    const text = opt.querySelector('span') ? opt.querySelector('span').textContent.trim() : opt.textContent.trim();
+
+                    if (textSpan) {
+                        textSpan.textContent = text;
+                        if (val === '' && !wrapper.id.includes('dateSelector')) {
+                            textSpan.classList.add('is-placeholder');
+                        } else {
+                            textSpan.classList.remove('is-placeholder');
+                        }
+                    }
+
+                    options.forEach(o => o.classList.remove('selected'));
+                    opt.classList.add('selected');
+                    closeAllCustomDropdowns();
+
+                    // If date selector changed, update calendar month header too
+                    if (wrapper.id === 'dateSelectorDropdownWrapper') {
+                        const mIdx = monthsList.indexOf(val);
+                        if (mIdx !== -1) {
+                            updateMonthDisplay(mIdx);
+                        }
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('click', () => {
+            closeAllCustomDropdowns();
+        });
+
+        // ----------------------------------------------------
+        // Admin Profile Popup Dropdown
+        // ----------------------------------------------------
+        const adminProfileTrigger = document.getElementById('adminProfileTrigger');
+        const adminProfileDropdown = document.getElementById('adminProfileDropdown');
+
+        function toggleAdminProfile() {
+            if (!adminProfileDropdown) return;
+            const isOpen = adminProfileDropdown.classList.contains('show');
+            if (isOpen) {
+                adminProfileDropdown.classList.remove('show');
+                adminProfileTrigger.classList.remove('active');
+            } else {
+                adminProfileDropdown.classList.add('show');
+                adminProfileTrigger.classList.add('active');
+            }
+        }
+
+        if (adminProfileTrigger) {
+            adminProfileTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleAdminProfile();
+            });
+        }
+
+        document.addEventListener('click', (e) => {
+            if (adminProfileDropdown && adminProfileDropdown.classList.contains('show')) {
+                if (!adminProfileDropdown.contains(e.target) && !adminProfileTrigger.contains(e.target)) {
+                    adminProfileDropdown.classList.remove('show');
+                    adminProfileTrigger.classList.remove('active');
+                }
+            }
+        });
+
+        // ----------------------------------------------------
+        // View Switcher (Month / Week / Day)
+        // ----------------------------------------------------
+        const viewBtns = document.querySelectorAll('.view-switcher-btn');
+        viewBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                viewBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // ----------------------------------------------------
+        // Calendar Month Navigation (All 12 Months)
+        // ----------------------------------------------------
+        const monthTitle = document.getElementById('calendarMonthTitle');
+        const calPrevBtn = document.getElementById('calPrevBtn');
+        const calNextBtn = document.getElementById('calNextBtn');
+        const monthsList = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+        let currentMonthIdx = 8; // September is index 8 (0-indexed)
+
+        function updateMonthDisplay(idx) {
+            if (idx < 0) idx = monthsList.length - 1;
+            if (idx >= monthsList.length) idx = 0;
+            currentMonthIdx = idx;
+            const monthName = monthsList[currentMonthIdx];
+            
+            if (monthTitle) monthTitle.textContent = `${monthName} 2026`;
+            
+            const datePillText = document.querySelector('#dateSelectorDropdownWrapper .selected-text');
+            if (datePillText) datePillText.textContent = monthName;
+
+            // Sync selected class in dropdown
+            document.querySelectorAll('#dateSelectorDropdownWrapper .custom-dropdown-option').forEach(opt => {
+                if (opt.getAttribute('data-value') === monthName) {
+                    opt.classList.add('selected');
+                } else {
+                    opt.classList.remove('selected');
+                }
+            });
+        }
+
+        if (calPrevBtn) {
+            calPrevBtn.addEventListener('click', () => {
+                updateMonthDisplay(currentMonthIdx - 1);
+            });
+        }
+
+        if (calNextBtn) {
+            calNextBtn.addEventListener('click', () => {
+                updateMonthDisplay(currentMonthIdx + 1);
+            });
+        }
+
+        // ----------------------------------------------------
+        // Meeting Details Modal Interaction
+        // ----------------------------------------------------
+        const detailsModalEl = document.getElementById('meetingDetailsModal');
+        const detailModalTitle = document.getElementById('detailModalTitle');
+        const detailCategoryBadge = document.getElementById('detailCategoryBadge');
+        const detailDateTime = document.getElementById('detailDateTime');
+        const detailChapter = document.getElementById('detailChapter');
+        const detailVenue = document.getElementById('detailVenue');
+
+        let detailsModal = null;
+        if (detailsModalEl && typeof bootstrap !== 'undefined') {
+            detailsModal = new bootstrap.Modal(detailsModalEl);
+        }
+
+        document.querySelectorAll('.meeting-chip').forEach(chip => {
+            chip.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const title = chip.getAttribute('data-title') || 'Meeting';
+                const time = chip.getAttribute('data-time') || '';
+                const date = chip.getAttribute('data-date') || 'September 2026';
+                const type = chip.getAttribute('data-type') || 'Chapter Meeting';
+
+                if (detailModalTitle) detailModalTitle.textContent = title;
+                if (detailCategoryBadge) detailCategoryBadge.textContent = type;
+                if (detailDateTime) detailDateTime.textContent = `${date}, ${time}`;
+                if (detailChapter) detailChapter.textContent = title;
+                if (detailVenue) detailVenue.textContent = 'In-Person • Regional Conference Hall';
+
+                if (detailsModal) detailsModal.show();
+            });
+        });
+
+        // ----------------------------------------------------
+        // Add Meeting Modal Handlers
+        // ----------------------------------------------------
+        const addMeetingModalEl = document.getElementById('addMeetingModal');
+        let addMeetingModal = null;
+        if (addMeetingModalEl && typeof bootstrap !== 'undefined') {
+            addMeetingModal = new bootstrap.Modal(addMeetingModalEl);
+        }
+
+        const openAddMeetingBtn = document.getElementById('btnOpenAddMeetingModal');
+        if (openAddMeetingBtn) {
+            openAddMeetingBtn.addEventListener('click', () => {
+                if (addMeetingModal) addMeetingModal.show();
+            });
+        }
+
+        document.querySelectorAll('.btn-cell-add-meeting').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const day = btn.getAttribute('data-day');
+                const dateInput = document.getElementById('inputMeetingDate');
+                if (dateInput && day) {
+                    const dStr = String(day).padStart(2, '0');
+                    dateInput.value = `2026-09-${dStr}`;
+                }
+                if (addMeetingModal) addMeetingModal.show();
+            });
+        });
+
+        const btnSaveNewMeeting = document.getElementById('btnSaveNewMeeting');
+        if (btnSaveNewMeeting) {
+            btnSaveNewMeeting.addEventListener('click', () => {
+                const chapter = document.getElementById('inputChapterName').value;
+                if (!chapter) {
+                    alert('Please enter a Chapter Name');
+                    return;
+                }
+                if (addMeetingModal) addMeetingModal.hide();
+                alert(`Meeting for "${chapter}" scheduled successfully!`);
+            });
+        }
+
+        // ----------------------------------------------------
+        // Command Palette Search Modal Handlers
+        // ----------------------------------------------------
+        const searchBarTrigger = document.getElementById('header-search-bar');
+        const searchModalBackdrop = document.getElementById('searchModalBackdrop');
+        const searchModalClose = document.getElementById('search-modal-close');
+        const searchModalInput = document.getElementById('search-modal-input');
+
+        function openSearchModal() {
+            if (searchModalBackdrop) {
+                searchModalBackdrop.classList.add('show');
+                if (searchModalInput) {
+                    setTimeout(() => searchModalInput.focus(), 150);
+                }
+            }
+        }
+
+        function closeSearchModal() {
+            if (searchModalBackdrop) {
+                searchModalBackdrop.classList.remove('show');
+            }
+        }
+
+        if (searchBarTrigger) searchBarTrigger.addEventListener('click', openSearchModal);
+        if (searchModalClose) searchModalClose.addEventListener('click', closeSearchModal);
+
+        if (searchModalBackdrop) {
+            searchModalBackdrop.addEventListener('click', (e) => {
+                if (e.target === searchModalBackdrop) closeSearchModal();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                openSearchModal();
+            }
+            if (e.key === 'Escape') {
+                closeSearchModal();
+                closeAllCustomDropdowns();
+                if (adminProfileDropdown) adminProfileDropdown.classList.remove('show');
+            }
+        });
+
+        // ----------------------------------------------------
+        // Attendance QR Code Interactions & Download
+        // ----------------------------------------------------
+        const attendanceQrModalEl = document.getElementById('attendanceQrModal');
+        let attendanceQrModal = null;
+        if (attendanceQrModalEl && typeof bootstrap !== 'undefined') {
+            attendanceQrModal = new bootstrap.Modal(attendanceQrModalEl);
+        }
+
+        const attendanceQrTrigger = document.getElementById('attendanceQrTrigger');
+        const attendanceDownloadBtn = document.getElementById('attendanceDownloadBtn');
+        const modalDownloadQrBtn = document.getElementById('modalDownloadQrBtn');
+        const copyAttendanceLinkBtn = document.getElementById('copyAttendanceLinkBtn');
+
+        if (attendanceQrTrigger) {
+            attendanceQrTrigger.addEventListener('click', () => {
+                if (attendanceQrModal) attendanceQrModal.show();
+            });
+        }
+
+        function downloadAttendanceQR() {
+            const svgEl = document.querySelector('.attendance-qr-box .attendance-qr-svg');
+            if (!svgEl) return;
+            const svgData = new XMLSerializer().serializeToString(svgEl);
+            const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+            const svgUrl = URL.createObjectURL(svgBlob);
+            const downloadLink = document.createElement('a');
+            downloadLink.href = svgUrl;
+            downloadLink.download = 'Rotary_Attendance_QR_Code.svg';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            URL.revokeObjectURL(svgUrl);
+
+            if (attendanceDownloadBtn) {
+                const origHtml = attendanceDownloadBtn.innerHTML;
+                attendanceDownloadBtn.innerHTML = '<i class="fa-solid fa-check" style="color: #10b981;"></i>';
+                setTimeout(() => {
+                    attendanceDownloadBtn.innerHTML = origHtml;
+                }, 2000);
+            }
+        }
+
+        if (attendanceDownloadBtn) {
+            attendanceDownloadBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                downloadAttendanceQR();
+            });
+        }
+
+        if (modalDownloadQrBtn) {
+            modalDownloadQrBtn.addEventListener('click', () => {
+                downloadAttendanceQR();
+            });
+        }
+
+        if (copyAttendanceLinkBtn) {
+            copyAttendanceLinkBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText('https://rotary.org/att/RMB-2026-SEP').then(() => {
+                    const origText = copyAttendanceLinkBtn.innerHTML;
+                    copyAttendanceLinkBtn.innerHTML = '<i class="fa-solid fa-check me-1 text-success"></i> Copied!';
+                    setTimeout(() => {
+                        copyAttendanceLinkBtn.innerHTML = origText;
+                    }, 2000);
+                }).catch(() => {
+                    copyAttendanceLinkBtn.innerHTML = '<i class="fa-solid fa-check me-1 text-success"></i> Copied!';
+                    setTimeout(() => {
+                        copyAttendanceLinkBtn.innerHTML = '<i class="fa-regular fa-copy me-1"></i> Copy';
+                    }, 2000);
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
